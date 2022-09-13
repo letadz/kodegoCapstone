@@ -16,7 +16,6 @@ import {
 const App = () => {
   return (
     <div className="App">
-      <ArrowBtn />
       <Navbar />
       <Hero />
       <Company />
@@ -26,6 +25,7 @@ const App = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <ArrowBtn />
     </div>
   );
 };
