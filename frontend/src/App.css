@@ -10,6 +10,6 @@ html {
 body {
   margin: auto;
   font-family: var(--font-family);
-  overflow-x: hidden;
+  overflow-y: scroll;
   display: block;
 }
