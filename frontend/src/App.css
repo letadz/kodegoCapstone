@@ -10,7 +10,11 @@ html {
 body {
   margin: auto;
   font-family: var(--font-family);
-  overflow-x: hidden;
+  overflow-y: scroll;
   display: block;
+<<<<<<< HEAD
   width: 100%;
 }
+=======
+}
+>>>>>>> bc9a884d1da2476152f2dd6a9c0f28f142e28a9e
