@@ -12,4 +12,5 @@ body {
   font-family: var(--font-family);
   overflow-y: scroll;
   display: block;
+  width: 100%;
 }
