@@ -1,13 +1,13 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import {
   Header,
   Hero,
   Services,
   Company,
-  Testimonials,
   Faqs,
+  Testimonials,
   About,
+  Contact,
   Footer,
 } from "../../components/";
 
@@ -18,9 +18,10 @@ const Home = () => {
       <Hero />
       <Services />
       <Company />
-      <Testimonials />
       <Faqs />
+      <Testimonials />
       <About />
+      <Contact />
       <Footer />
     </div>
   );

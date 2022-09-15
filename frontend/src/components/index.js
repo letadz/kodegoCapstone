@@ -1,8 +1,9 @@
-export { default as Header } from "./header";
-export { default as Hero } from "./hero";
-export { default as Services } from "./services";
-export { default as Company } from "./company";
-export { default as Testimonials } from "./testimonials";
-export { default as Faqs } from "./faqs";
-export { default as About } from "./about";
-export { default as Footer } from "./footer";
+export { default as Header } from "./header/Header";
+export { default as Hero } from "./hero/Hero";
+export { default as Services } from "./services/Services";
+export { default as Company } from "./company/Company";
+export { default as Faqs } from "./faqs/Faqs";
+export { default as Testimonials } from "./testimonials/Testimonials";
+export { default as About } from "./about/About";
+export { default as Contact } from "./contact/Contact";
+export { default as Footer } from "./footer/Footer";

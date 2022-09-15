@@ -1,0 +1,321 @@
+/* SPECIAL OFFERS */
+.services .services-special {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.services .services-offers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services .offers-title {
+  position: relative;
+  padding: 2rem;
+  font-size: 2.15rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.services .offers-title::after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 0.3rem;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-orange);
+}
+
+.services .item {
+  width: calc(30% - 2rem);
+  margin: 0.5rem 1rem;
+  position: relative;
+  background: #eee;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+.services .item:hover {
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.5);
+}
+
+.services .item:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 0.6rem;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-orange);
+}
+
+.services .item1-img:hover:after,
+.item2-img:hover:after,
+.item3-img:hover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 63%;
+  width: 100%;
+  background-color: var(--color-orange);
+  opacity: 0.1;
+}
+
+.services .item1-img {
+  background: url("../../images/services/hail-damage-repair.webp") no-repeat
+    center;
+  background-size: cover;
+  height: 15.625rem;
+}
+
+.services .item2-img {
+  background: url("../../images/services/engine-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 15.625rem;
+}
+
+.services .item3-img {
+  background: url("../../images/services/exterior.webp") no-repeat center;
+  background-size: cover;
+  height: 15.625rem;
+}
+
+.services .item1-img::before,
+.item2-img::before,
+.item3-img::before {
+  content: "free";
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  margin: auto;
+  max-width: 6rem;
+  width: 100%;
+  background-color: var(--color-orange);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.services .item-content {
+  padding: 1rem 1.5rem;
+}
+
+.services .item-title {
+  font-size: 1.225rem;
+  font-weight: 600;
+}
+
+.services .item-description {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+/* SPECIAL OFFERS */
+
+/* SERVICES */
+.services .services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* .services .services-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    column-gap: 1rem;
+  } */
+
+.services .services-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services .bottom-title {
+  position: relative;
+  padding: 2rem;
+  font-size: 2.15rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.services .bottom-title::after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  height: 0.3rem;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-orange);
+}
+
+/* .services .services-img1 {
+  background: url("../../images/services/engine-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img2 {
+  background: url("../../images/services/exterior.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img3 {
+  background: url("../../images/services/collision-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img4 {
+  background: url("../../images/services/glass-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img5 {
+  background: url("../../images/services/dent-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img6 {
+  background: url("../../images/services/frame-straightening.webp") no-repeat
+    center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img7 {
+  background: url("../../images/services/hail-damage-repair.webp") no-repeat
+    center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img8 {
+  background: url("../../images/services/collision-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img9 {
+  background: url("../../images/services/engine-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img10 {
+  background: url("../../images/services/exterior.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img11 {
+  background: url("../../images/services/glass-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+}
+
+.services .services-img12 {
+  background: url("../../images/services/dent-repair.webp") no-repeat center;
+  background-size: cover;
+  height: 11rem;
+} */
+
+.services .services-items {
+  position: relative;
+  width: calc(25% - 2rem);
+  height: 230px;
+  margin: 0.5rem 1rem;
+  background: #eee;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+.services .services-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: calc(100% + 0.01rem);
+}
+
+.services .services-content {
+  padding: 0.8rem;
+  min-height: 4rem;
+}
+
+.services .services-title {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.services .btnServices {
+  margin-top: 3rem;
+  padding: 0.5rem 1.125rem;
+  border-radius: 7px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.services .btnServices:hover {
+  color: var(--color-orange);
+}
+
+/* HOVER SERVICES */
+.services .services-items:hover {
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.5);
+}
+
+.services .services-items:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 0.3rem;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-orange);
+}
+
+.services .services-img:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 75%;
+  width: 100%;
+  background-color: var(--color-orange);
+  opacity: 0.1;
+}
+/* HOVER SERVICES */
+
+
+@media screen and (max-width: 1024px) {
+  .services .item1-img:hover:after,
+  .item2-img:hover:after,
+  .item3-img:hover:after {
+    height: 55%;
+  }
+}
