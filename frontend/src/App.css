@@ -12,6 +12,7 @@ body {
   font-family: var(--font-family);
   overflow-x: hidden;
   display: block;
+<<<<<<< HEAD
 }
 
 /* Scroll theme */
@@ -24,3 +25,7 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: var(--color-black);
 }
+=======
+  width: 100%;
+}
+>>>>>>> 15ed6bb5e81b62a6a1615718939ce31acd23beb1
