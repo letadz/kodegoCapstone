@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Header = () => {
+const LoggedInHeader = () => {
+  const { user } = useSelector((user) => ({ ...user }));
   return (
     <header style={{ display: "flex", justifyContent: "space-between" }}>
       <div className="header_left">
@@ -16,10 +18,13 @@ const Header = () => {
         <a href="#contacts">Contacts</a>
       </div>
       <div className="header_right">
-        <Link to="/login">Login</Link>
+        <Link to="/profile">
+          <img src={user?.picture} alt="" />
+          <span>{user?.first_name}</span>
+        </Link>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default LoggedInHeader;

@@ -1,17 +1,22 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home";
+import UserHome from "./pages/home/UserHome";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
+import NotFound from "./components/notfound";
+import LoggedinRoutes from "./routes/LoggedinRoutes";
 
 const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} exact />
-        <Route path="/login" element={<Login />} exact />
-        <Route path="/profile" element={<Profile />} exact />
+        <Route element={<LoggedinRoutes />}>
+          <Route path="/" element={<UserHome />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

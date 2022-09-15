@@ -62,11 +62,6 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    birth_year: {
-      type: Number,
-      required: true,
-      trim: true,
-    },
   },
   {
     timestamps: true,
