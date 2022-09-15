@@ -1,5 +1,10 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedin,
+} from "react-icons/fa";
 import "./Footer.css";
 
 const Footer = () => {
@@ -39,21 +44,47 @@ const Footer = () => {
           <div className="social-apps">
             <h5 className="social-title">MAG's Social</h5>
             <div className="social-logo">
-              <a href="https://www.facebook.com/" rel="noreferrer" target="_blank">
-                <FaFacebookF size={22}/>
+              <a
+                href="https://www.facebook.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaFacebookF size={22} />
               </a>
-              <a href="https://www.instagram.com/" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.instagram.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <FaInstagram size={22} />
               </a>
-              <a href="https://www.twitter.com/" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.twitter.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <FaTwitter size={22} />
               </a>
-              <a href="https://www.linkedin.com/" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.linkedin.com/"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <FaLinkedin size={22} />
               </a>
             </div>
           </div>
         </div>
+
+        {/* Bottom */}
+        <div className="copyright-container">
+          <div className="copyright-content">
+            <span>
+              &copy; Mag's Auto Repair Philippines. All Right Reserved
+            </span>
+          </div>
+        </div>
+        
       </div>
     </div>
   );

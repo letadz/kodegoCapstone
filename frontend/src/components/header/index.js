@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header style={{ display: "flex", justifyContent: "space-between" }}>
       <div className="header_left">
-        <Link to="/" className="header_logo">
+        <Link to='/' className="header_logo">
           <div className="logo">logo here</div>
         </Link>
       </div>

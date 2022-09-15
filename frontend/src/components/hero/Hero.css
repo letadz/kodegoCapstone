@@ -1,9 +1,9 @@
 .hero-section .hero-bg {
+  position: relative;
     height: 92vh;
     width: 100%;
     background: url('../../images/hero-bg/hero.jpg') no-repeat center top;
     background-size: cover;
-    position: relative;
 }
 
 .hero-section .hero-content {

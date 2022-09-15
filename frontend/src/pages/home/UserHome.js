@@ -1,11 +1,13 @@
 import React from "react";
 import {
+  Header,
   Hero,
   Services,
   Company,
   Testimonials,
   Faqs,
   About,
+  Contact,
   Footer,
 } from "../../components/";
 import LoggedInHeader from "../../components/headerUser";
@@ -13,13 +15,15 @@ import LoggedInHeader from "../../components/headerUser";
 const UserHome = () => {
   return (
     <div>
+      <Header />
       <LoggedInHeader />
       <Hero />
       <Services />
       <Company />
-      <Testimonials />
       <Faqs />
+      <Testimonials />
       <About />
+      <Contact />
       <Footer />
     </div>
   );
