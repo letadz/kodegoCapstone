@@ -4,9 +4,10 @@ import {
   Hero,
   Services,
   Company,
-  Testimonials,
   Faqs,
+  Testimonials,
   About,
+  Contact,
   Footer,
 } from "../../components/";
 
@@ -17,9 +18,10 @@ const Home = () => {
       <Hero />
       <Services />
       <Company />
-      <Testimonials />
       <Faqs />
+      <Testimonials />
       <About />
+      <Contact />
       <Footer />
     </div>
   );

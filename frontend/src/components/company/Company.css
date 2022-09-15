@@ -1,0 +1,32 @@
+.company {
+    margin: 1rem auto;
+    padding: 1rem 0;
+}
+
+.company .company-section {
+    /* background-color: var(--color-orange); */
+    margin: 1rem 0;
+}
+
+.company .company-title {
+    margin: 3rem auto;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.company img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.company .slick-dots {
+    position: static;
+    padding: 2rem 0;
+}
+
+.company .slick-slide > div {
+    text-align: center;
+}

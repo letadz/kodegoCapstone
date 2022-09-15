@@ -10,7 +10,22 @@ html {
 body {
   margin: auto;
   font-family: var(--font-family);
-  overflow-y: scroll;
+  overflow-x: hidden;
   display: block;
+<<<<<<< HEAD
+}
+
+/* Scroll theme */
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: var(--color-grey);
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+}
+=======
   width: 100%;
 }
+>>>>>>> 15ed6bb5e81b62a6a1615718939ce31acd23beb1
