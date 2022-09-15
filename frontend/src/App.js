@@ -4,8 +4,8 @@ import "./App.css";
 import UserHome from "./pages/home/UserHome";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
-import NotFound from "./components/notfound";
 import LoggedinRoutes from "./routes/LoggedinRoutes";
+import NotLoggedinRoutes from "./routes/NotLoggedinRoutes";
 
 const App = () => {
   return (
@@ -13,10 +13,11 @@ const App = () => {
       <Routes>
         <Route element={<LoggedinRoutes />}>
           <Route path="/" element={<UserHome />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile//*" element={<Profile />} />
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
+        <Route element={<NotLoggedinRoutes />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
       </Routes>
     </div>
   );
