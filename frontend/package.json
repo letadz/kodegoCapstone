@@ -13,13 +13,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-<<<<<<< HEAD
     "react-iframe": "^1.8.0",
     "react-redux": "^8.0.2",
-=======
-    "react-redux": "^7.2.6",
-    "react-responsive": "^9.0.0-beta.10",
->>>>>>> 15ed6bb5e81b62a6a1615718939ce31acd23beb1
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
