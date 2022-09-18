@@ -1,5 +1,5 @@
 .company {
-    margin: 3rem auto;
+    margin: 1rem auto;
     padding: 1rem 0;
 }
 
@@ -24,9 +24,21 @@
 
 .company .slick-dots {
     position: static;
-    padding: 2rem 0;
+    margin: 2rem 0;
 }
 
 .company .slick-slide > div {
     text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .company img {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .company img {
+        width: 50%;
+    }
 }

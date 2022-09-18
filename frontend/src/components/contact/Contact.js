@@ -17,18 +17,18 @@ const Contact = () => {
             <img className="logo" src={Logo} alt="logo" />
             <div className="contact-info">
               <div className="tel">
-                <BsTelephoneFill color="#e8e8e8" size={32} />
+                <BsTelephoneFill color="#e8e8e8" className="tel-logo" />
                 <div className="tel-number">
                   <span>912-345-6789</span>
                   <span>0123-4567</span>
                 </div>
               </div>
               <div className="email">
-                <BsFillEnvelopeFill color="#e8e8e8" size={32} />
+                <BsFillEnvelopeFill color="#e8e8e8" className="email-logo" />
                 <span>magsautorepairshop@hotmail.com</span>
               </div>
               <div className="address">
-                <MdLocationOn color="#e8e8e8" size={32} />
+                <MdLocationOn color="#e8e8e8" className="address-logo" />
                 <span>Seaside Blvd, 123, Pasay, 1300 Metro Manila</span>
               </div>
             </div>

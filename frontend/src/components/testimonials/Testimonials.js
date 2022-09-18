@@ -21,6 +21,24 @@ const Testimonials = () => {
     autoplaySpeed: 4000,
     cssEase: "linear",
     arrows: true,
+    initialSlide: 0,
+    responsive: [   
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false
+        }
+      },
+    ]
   };
 
   const stars = Array(5).fill(0);

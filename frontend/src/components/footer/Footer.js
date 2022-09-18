@@ -49,28 +49,28 @@ const Footer = () => {
                 rel="noreferrer"
                 target="_blank"
               >
-                <FaFacebookF size={22} />
+                <FaFacebookF className="fb-logo" />
               </a>
               <a
                 href="https://www.instagram.com/"
                 rel="noreferrer"
                 target="_blank"
               >
-                <FaInstagram size={22} />
+                <FaInstagram className="ig-logo" />
               </a>
               <a
                 href="https://www.twitter.com/"
                 rel="noreferrer"
                 target="_blank"
               >
-                <FaTwitter size={22} />
+                <FaTwitter className="twitter-logo" />
               </a>
               <a
                 href="https://www.linkedin.com/"
                 rel="noreferrer"
                 target="_blank"
               >
-                <FaLinkedin size={22} />
+                <FaLinkedin className="linkedin-logo" />
               </a>
             </div>
           </div>

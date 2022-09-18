@@ -5,12 +5,9 @@ const index = () => {
   return (
     <div id="faqs" className="faqsContainer">
       <div className="wrapper container my-5">
-        <h1 className="faqsTitle">FAQs</h1>
         <div className="faqsContent">
-          <div
-            className="accordion accordion-flush text-start my-5"
-            id="accordionFlushExample"
-          >
+          <div className="accordion accordion-flush" id="accordionFlushExample">
+          <h1 className="faqsTitle">FAQs</h1>
             <div className="accordion-item">
               <h2 className="accordion-header" id="flush-item1">
                 <button

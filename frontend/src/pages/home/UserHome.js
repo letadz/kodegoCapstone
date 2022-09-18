@@ -2,6 +2,7 @@ import React from "react";
 import {
   Header,
   Hero,
+  Offers,
   Services,
   Company,
   Testimonials,
@@ -17,6 +18,7 @@ const UserHome = () => {
     <div>
       <LoggedInHeader />
       <Hero />
+      <Offers />
       <Services />
       <Company />
       <Faqs />
