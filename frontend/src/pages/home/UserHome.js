@@ -15,7 +15,6 @@ import LoggedInHeader from "../../components/headerUser";
 const UserHome = () => {
   return (
     <div>
-      <Header />
       <LoggedInHeader />
       <Hero />
       <Services />

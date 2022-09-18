@@ -2,12 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
+import LoggedInHeader from "../../../components/headerUser";
 
 const Navbar = () => {
   const { user } = useSelector((user) => ({ ...user }));
 
   return (
     <>
+      <LoggedInHeader />
       <div className="user_container">
         <div className="navigation">
           <div className="navigation_name">
