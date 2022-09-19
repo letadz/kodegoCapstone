@@ -6,6 +6,7 @@ import Cars from "./profile_nav/Cars";
 import Settings from "./profile_nav/Settings";
 import History from "./profile_nav/History";
 import { useSelector } from "react-redux";
+import LoggedInHeader from "../../components/headerUser";
 
 const Profile = () => {
   const { user } = useSelector((user) => ({ ...user }));

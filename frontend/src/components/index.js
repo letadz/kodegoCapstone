@@ -1,4 +1,4 @@
-export { default as Header } from "./header/Header";
+export { default as Header } from "./header";
 export { default as Hero } from "./hero/Hero";
 export { default as Offers } from "./offers/Offers";
 export { default as Services } from "./services/Services";
