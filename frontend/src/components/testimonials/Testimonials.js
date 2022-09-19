@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaStar } from "react-icons/fa";
 import "./Testimonials.css";
+import { FaStar } from "react-icons/fa";
+import ModalTestimonial from "../subComponents/modal-testimonial/ModalTestimonial";
 
 const colors = {
   orange: "#f5d10d",
@@ -11,6 +12,8 @@ const colors = {
 };
 
 const Testimonials = () => {
+  const stars = Array(5).fill(0);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -22,39 +25,23 @@ const Testimonials = () => {
     cssEase: "linear",
     arrows: true,
     initialSlide: 0,
-    responsive: [   
+    responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-        }
+        },
       },
       {
         breakpoint: 425,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false
-        }
+          arrows: false,
+        },
       },
-    ]
-  };
-
-  const stars = Array(5).fill(0);
-  const [currentValue, setCurrentValue] = useState(0);
-  const [hoverValue, setHoverValue] = useState(undefined);
-
-  const handleClick = (value) => {
-    setCurrentValue(value);
-  };
-
-  const handleMouseOver = (value) => {
-    setHoverValue(value);
-  };
-
-  const handleMouseLeave = () => {
-    setHoverValue(undefined);
+    ],
   };
 
   return (
@@ -131,10 +118,10 @@ const Testimonials = () => {
       </div>
 
       {/* Button review */}
-      <div className="container d-block text-center pt-1 mt-3">
+      <div className="container-btn container d-block text-center pt-1 mt-3">
         <button
           type="button"
-          className="btn-review"
+          className="review-btn"
           data-bs-toggle="modal"
           data-bs-target="#review"
         >
@@ -143,88 +130,9 @@ const Testimonials = () => {
       </div>
 
       {/* Modal */}
-      <div className="modal fade text-center" id="review" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="reviewLabel">
-                Leave a Review
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-
-            <div className="modal-body">
-              <form>
-                <div style={styles.container}>
-                  <div style={styles.stars}>
-                    {stars.map((_, index) => {
-                      return (
-                        <FaStar
-                          key={index}
-                          size={32}
-                          style={{
-                            marginRight: 10,
-                            cursor: "pointer",
-                          }}
-                          color={
-                            (hoverValue || currentValue) > index
-                              ? colors.orange
-                              : colors.grey
-                          }
-                          onClick={() => handleClick(index + 1)}
-                          onMouseOver={() => handleMouseOver(index + 1)}
-                          onMouseLeave={handleMouseLeave}
-                        />
-                      );
-                    })}
-                  </div>
-                </div>
-                <textarea
-                  className="textbox"
-                  rows={10}
-                  placeholder="Your message"
-                ></textarea>
-                <div className="modalInfo my-3">
-                  <input
-                    type="text"
-                    className="username p-1 mb-3"
-                    placeholder="Your name*"
-                    required
-                  />
-                  <input
-                    type="text"
-                    className="number p-1"
-                    placeholder="Phone number*"
-                    required
-                  />
-                </div>
-              </form>
-            </div>
-
-            <div className="modal-footer">
-              <button type="button" className="btn btn-warning">
-                Submit Review
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ModalTestimonial />
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "1rem 0",
-  },
 };
 
 const ratingStar = {

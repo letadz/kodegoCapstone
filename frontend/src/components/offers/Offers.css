@@ -60,9 +60,7 @@
   background-color: var(--color-orange);
 }
 
-.offers .item1-img:hover::after,
-.item2-img:hover:after,
-.item3-img:hover:after {
+.offers .item:hover::after{
   content: "";
   position: absolute;
   top: 0;

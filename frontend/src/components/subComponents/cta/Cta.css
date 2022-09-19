@@ -1,0 +1,16 @@
+.btn-schedule {
+  position: relative;
+  padding: 0.8rem 1.125rem;
+  color: var(--color-black);
+  background-color: var(--color-orange);
+  text-decoration: none;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease-in;
+}
+
+.btn-schedule:hover {
+    cursor: pointer;
+    box-shadow: inset 200px 0 0 0 #f6e71d;
+}
