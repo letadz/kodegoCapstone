@@ -13,7 +13,7 @@ import {
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
       <Services />
@@ -23,7 +23,7 @@ const Home = () => {
       <About />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 };
 

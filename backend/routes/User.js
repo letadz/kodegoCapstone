@@ -3,12 +3,15 @@ const {
   register,
   activateAccount,
   login,
+  sendVerification,
 } = require("../controllers/userController");
+const { authUser } = require("../middleware/auth");
 
 const router = express.Router();
 
 router.post("/register", register);
-router.post("/activate", activateAccount);
+router.post("/activate", authUser, activateAccount);
 router.post("/login", login);
+router.post("/sendVerification", authUser, sendVerification);
 
 module.exports = router;
