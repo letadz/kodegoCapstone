@@ -127,6 +127,15 @@ const Testimonials = () => {
         >
           Leave a Review
         </button>
+
+        <button
+          type="button"
+          className="btn-schedule"
+          data-bs-toggle="modal"
+          data-bs-target="#schedule"
+        >
+          <span>Book Schedule</span>
+        </button>
       </div>
 
       {/* Modal */}

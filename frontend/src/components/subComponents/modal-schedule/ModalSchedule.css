@@ -116,6 +116,7 @@
 @media screen and (max-width:425px) {
   .modal-schedule .modal-content {
     width: 90vw;
+    height: auto;
   }
 
   .modal-schedule .schedule-form {
