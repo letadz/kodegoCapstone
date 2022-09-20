@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 1rem auto 3rem auto;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .footer .company-info {

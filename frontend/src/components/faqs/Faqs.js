@@ -3,11 +3,11 @@ import "./Faqs.css";
 
 const index = () => {
   return (
-    <div id="faqs" className="faqsContainer">
-      <div className="wrapper container my-5">
-        <div className="faqsContent">
+    <div id="faqs" className="faqs">
+      <div className="wrapper container">
+        <div className="faqs-content">
           <div className="accordion accordion-flush" id="accordionFlushExample">
-          <h1 className="faqsTitle">FAQs</h1>
+          <h1 className="faqs-title">FAQs</h1>
             <div className="accordion-item">
               <h2 className="accordion-header" id="flush-item1">
                 <button
@@ -167,7 +167,7 @@ const index = () => {
           </div>
 
           <div className="image-container">
-            <div className="faqsImg">
+            <div className="faqs-img">
               <div className="image-content">
                 <h3>Diagnostics, Repairs, & Servicing</h3>
                 {/* <a href="/" className="bookBtn">

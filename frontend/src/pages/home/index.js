@@ -2,6 +2,7 @@ import React from "react";
 import {
   Header,
   Hero,
+  Offers,
   Services,
   Company,
   Faqs,
@@ -16,6 +17,7 @@ const Home = () => {
     <>
       <Header />
       <Hero />
+      <Offers />
       <Services />
       <Company />
       <Faqs />

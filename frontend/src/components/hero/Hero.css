@@ -20,27 +20,14 @@
     font-size: 5rem;
     font-weight: 700;
     width: 80%;
-    text-shadow: 5px 1px 8px rgba(0,0,0,0.7);
+    text-shadow: 5px 1px 8px rgba(0,0,0,0.9);
 }
 
 .hero-section .hero-description {
     font-size: 2rem;
     font-weight: 600;
     text-shadow: 5px 1px 8px rgba(0,0,0,0.7);
-}
-
-.hero-section .bookBtn {
-    color: var(--color-black);
-    background-color: var(--color-orange);
-    border-radius: 0.8rem;
-    padding: 0.8rem 1.125rem;
-    margin-top: 2rem;
-    text-decoration: none;
-    font-size: 1.125rem;
-}
-
-.hero-section .bookBtn:hover {
-    background-color: #f6e71d;
+    margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 768px) {

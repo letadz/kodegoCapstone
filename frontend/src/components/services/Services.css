@@ -13,7 +13,9 @@
 
 .services .services-section {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .services .bottom-title {
@@ -110,6 +112,13 @@
   height: 11rem;
 }
 
+/* .services .services-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 11rem;
+} */
+
 .services .services-items {
   position: relative;
   width: calc(25% - 2rem);
@@ -120,9 +129,11 @@
   transition: 0.5s all;
 }
 
-.services .services-img {
+
+
+/* .services .services-img {
   width: calc(100% + 0.01rem);
-}
+} */
 
 .services .services-content {
   padding: 0.8rem;
@@ -163,6 +174,7 @@
   background-color: var(--color-orange);
   opacity: 0.1;
 }
+
 /* HOVER SERVICES */
 
 @media screen and (max-width: 1024px) {
@@ -206,7 +218,7 @@
 
 @media screen and (max-width: 425px) {
   .services .services-container {
-    height: 205rem;
+    height: 213rem;
   }
 
   .services .item1-img:hover:after,

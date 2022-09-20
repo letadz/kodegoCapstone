@@ -1,88 +1,118 @@
+.testimonials {
+  padding: 1rem 1rem 0;
+}
+
 .testimonials .testimonials-title {
-    position: relative;
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .testimonials .testimonials-title::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 3.5rem;
-    max-width: 15rem;
-    width: 100%;
-    height: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-orange);
-    /* border-bottom: 5px solid var(--color-orange); */
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3.5rem;
+  max-width: 15rem;
+  width: 100%;
+  height: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-orange);
+  /* border-bottom: 5px solid var(--color-orange); */
 }
 
 .testimonials .cardBody {
-    max-width: 20rem;
-    width: 100%;
-    height: 20rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    cursor: pointer;
+  max-width: 20rem;
+  width: 100%;
+  height: 20rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  cursor: pointer;
 }
 
 .testimonials .slick-slide {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 }
 
-.slick-prev:before, .slick-next:before {
-    color: black;
+.testimonials .slick-prev:before,
+.testimonials .slick-next:before {
+  color: black;
+}
+
+.testimonials .slick-dots {
+  position: static;
+}
+
+.testimonials .container-btn {
+  display: block;
+  padding-top: 0.25rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 /* BUTTON */
-.testimonials .btn-review {
-    padding: 0.5rem 1rem;
-    background-color: transparent;
-    border: 1px solid var(--color-black);
-    border-radius: 5px;
+.testimonials .review-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--color-black);
+  border-radius: 10px;
+  transition: 0.3s ease-in;
+  margin-right: 2rem;
 }
 
-.testimonials .btn-review:hover {
-    background-color: var(--color-black);
-    color: var(--color-white);
+.testimonials .review-btn:hover {
+  cursor: pointer;
+  color: var(--color-white);
+  box-shadow: inset 200px 0 0 0 var(--color-black);
+  border: 1px solid var(--color-black);
 }
 
-/* Modal */
-.modal .modal-dialog {
-    display: grid;
-    place-content: center;
-    width: 100%;
-    height: 100%;
+.testimonials .btn-schedule {
+  padding: 0.5rem 1rem;
+  color: var(--color-black);
+  background-color: var(--color-orange);
+  text-decoration: none;
+  font-size: 1.125rem;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease-in;
 }
 
-.modal .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.modal .textbox {
-    max-width: 27.2rem;
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-}
-
-.modalInfo .username, .number {
-    max-width: 27rem;
-    width: 100%;
+.testimonials .btn-schedule:hover {
+  cursor: pointer;
+  box-shadow: inset 250px 0 0 0 #f6e71d;
 }
 
 @media screen and (max-width: 768px) {
-    .cardBody {
-        width: 100%;
-        height: 100%;
+  .cardBody {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 411px) {
+    .testimonials .review-btn {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .testimonials .btn-schedule {
+        padding: 0.5rem 0.8rem;
     }
 }

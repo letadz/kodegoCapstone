@@ -21,7 +21,7 @@
   bottom: 1rem;
   left: 0;
   height: 0.3rem;
-  max-width: 9rem;
+  max-width: 8.5rem;
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -97,14 +97,6 @@
   .contacts .logo {
     width: 20rem;
   }
-
-  .contacts .tel {
-    font-size: 0.9rem;
-  }
-
-  .contacts .tel-logo {
-    font-size: 1.8rem;
-  }
 }
 
 @media screen and (max-width: 944px) {
@@ -146,7 +138,7 @@
   }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 500px) {
 
   .contacts .contact-title {
     margin-bottom: 1rem;
@@ -163,7 +155,7 @@
     flex-direction: column;
     justify-items: center;
     align-items: flex-start;
-    margin: auto;
+    margin: 0 1rem 0;
     gap: 1rem;
     color: var(--color-grey);
   }
@@ -175,7 +167,7 @@
   }
 
   .contacts .map {
-    width: 25rem;
-    height: 15rem;
+    width: 100%;
+    height: 100%;
   }
 }
