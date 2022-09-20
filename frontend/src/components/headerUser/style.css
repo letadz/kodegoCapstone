@@ -149,7 +149,7 @@
 }
 .navbar-menu_container-links-book a {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 16px;
 }

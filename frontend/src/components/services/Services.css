@@ -127,9 +127,8 @@
   background: #eee;
   cursor: pointer;
   transition: 0.5s all;
+  color: var(--color-black);
 }
-
-
 
 /* .services .services-img {
   width: calc(100% + 0.01rem);

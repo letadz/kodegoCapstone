@@ -109,6 +109,12 @@
 }
 
 
+@media screen and (max-width: 768px) {
+  .faqs .faqs-content {
+    padding: 2rem 0;
+  }
+}
+
 @media screen and (max-width: 756px){
   .faqs .image-content {
     margin-left: 0;
