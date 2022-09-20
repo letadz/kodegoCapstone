@@ -6,10 +6,12 @@ import Login from "./pages/login";
 import Profile from "./pages/profile";
 import LoggedinRoutes from "./routes/LoggedinRoutes";
 import NotLoggedinRoutes from "./routes/NotLoggedinRoutes";
+import ArrowButton from "./components/subComponents/scroll-top/ScrollToTop";
 
 const App = () => {
   return (
     <div className="App">
+      <ArrowButton />
       <Routes>
         <Route element={<LoggedinRoutes />}>
           <Route path="/" element={<UserHome />} />

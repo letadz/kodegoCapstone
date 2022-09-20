@@ -52,7 +52,7 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <div id="home" className="navbar">
-      <div className="navbar-links">
+      <div className="navbar-links container">
         <div className="navbar-links_logo">
           <Link to="/">
             <img src={Logo} alt="Logo" />
@@ -61,15 +61,16 @@ const Header = () => {
         <div className="navbar-links_container">
           <Menu />
         </div>
-      </div>
-      <div className="navbar-login-register">
-        <div className="navbar-login">
-          <Link to="/login">Login</Link>
+        <div className="navbar-login-register">
+          <button className="navbar-login">
+            <Link to="/login">Login</Link>
+          </button>
+          <div className="navbar-register">
+            <Link to="/login">Register</Link>
+          </div>
         </div>
-        <div className="navbar-register">
-          <Link to="/login">Register</Link>
-        </div>
       </div>
+
       <div className="navbar-menu">
         {toggleMenu ? (
           <RiCloseLine

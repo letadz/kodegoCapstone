@@ -48,7 +48,7 @@ const Testimonials = () => {
     <div id="testimonials" className="testimonials">
       <h1 className="testimonials-title">Testimonials</h1>
       <div className="cards container">
-        <div className="row py-3 my-5">
+        <div className="row">
           <Slider {...settings} className="slider">
             <div className="cardBody p-3">
               <div style={ratingStar.container}>
@@ -118,7 +118,7 @@ const Testimonials = () => {
       </div>
 
       {/* Button review */}
-      <div className="container-btn container d-block text-center pt-1 mt-3">
+      <div className="container-btn container d-block text-center">
         <button
           type="button"
           className="review-btn"

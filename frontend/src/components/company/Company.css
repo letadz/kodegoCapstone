@@ -17,8 +17,8 @@
 .company img {
     display: inline-block;
     vertical-align: middle;
-    width: 70%;
-    height: 2.5rem;
+    width: 65%;
+    height: 2.1rem;
     cursor: pointer;
 }
 
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 1024px) {
     .company img {
-        width: 65%;
+        width: 60%;
     }
 }
 
