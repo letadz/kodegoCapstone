@@ -3,16 +3,18 @@ import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 import LoggedInHeader from "../../../components/headerUser";
+import "../style.css";
 
 const Navbar = () => {
   const { user } = useSelector((user) => ({ ...user }));
 
   return (
     <>
-      <LoggedInHeader />
       <div className="user_container">
         <div className="navigation">
-          <div className="navigation_name">
+          <Link to="/">Back to Home</Link>
+
+          <Link className="navigation_name" to="/profile/home">
             <div className="profile_pic">
               <img src={user.picture} alt="" />
             </div>
@@ -21,22 +23,16 @@ const Navbar = () => {
               <span>{user.first_name}</span>
               <span>{user.email}</span>
             </div>
-          </div>
+          </Link>
 
           <div className="menu">
-            <Link
-              to="/profile/cars"
-              className="navbar-links_link navigation-page"
-            >
+            <Link to="/profile/cars" className="menu_item">
               Cars
             </Link>
-            <Link
-              to="/profile/history"
-              className="navbar-links_link navigation-page"
-            >
+            <Link to="/profile/history" className="menu_item">
               Service History
             </Link>
-            <Link to="/profile/settings" className="navbar-links_link cta-btn">
+            <Link to="/profile/settings" className="menu_item">
               Settings
             </Link>
           </div>

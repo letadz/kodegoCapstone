@@ -14,7 +14,7 @@ import {
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
       <Offers />
@@ -25,7 +25,7 @@ const Home = () => {
       <About />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 };
 

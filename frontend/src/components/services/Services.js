@@ -1,7 +1,5 @@
 import React from "react";
 import "./Services.css";
-// import ShowServices from "./ShowServices";
-// import data from "./ServicesData";
 
 const Services = () => {
   // const [page, setPage] = useState(12);

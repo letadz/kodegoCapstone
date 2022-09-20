@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+
 import {
   Header,
   Hero,
@@ -15,7 +18,7 @@ import LoggedInHeader from "../../components/headerUser";
 
 const UserHome = () => {
   return (
-    <div>
+    <>
       <LoggedInHeader />
       <Hero />
       <Offers />
@@ -26,7 +29,7 @@ const UserHome = () => {
       <About />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 };
 

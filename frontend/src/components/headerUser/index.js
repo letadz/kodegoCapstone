@@ -40,7 +40,7 @@ const LoggedInHeader = () => {
         </div>
       </div>
       <div className="navbar-book">
-        <Link to="/profile">
+        <Link to="/profile/home">
           <img src={user?.picture} alt="" />
           <span>{user?.first_name}</span>
         </Link>
@@ -64,7 +64,7 @@ const LoggedInHeader = () => {
             <div className="navbar-menu_container-links ">
               <Menu />
               <div className="navbar-menu_container-links-book">
-                <Link to="/profile">
+                <Link to="/profile/home">
                   <img src={user?.picture} alt="" />
                   <span>{user?.first_name}</span>
                 </Link>
