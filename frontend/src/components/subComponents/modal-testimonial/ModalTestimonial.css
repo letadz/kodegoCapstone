@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     width: 30vw;
+    border: none;
 }
 
 .modal-testimonials .modal-header {

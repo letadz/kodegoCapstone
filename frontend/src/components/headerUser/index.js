@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import "./style.css";
 import Logo from "../../images/logo/MagsLogo.png";
 
@@ -29,7 +29,7 @@ const LoggedInHeader = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <div id="home" className="navbar">
-      <div className="navbar-links">
+      <div className="navbar-links container">
         <div className="navbar-links_logo">
           <a href="#home">
             <img src={Logo} alt="Logo" />
@@ -38,40 +38,41 @@ const LoggedInHeader = () => {
         <div className="navbar-links_container">
           <Menu />
         </div>
-      </div>
-      <div className="navbar-book">
-        <Link to="/profile/home">
-          <img src={user?.picture} alt="" />
-          <span>{user?.first_name}</span>
-        </Link>
-      </div>
-      <div className="navbar-menu">
-        {toggleMenu ? (
-          <RiCloseLine
-            color="#020202"
-            size={27}
-            onClick={() => setToggleMenu(false)}
-          />
-        ) : (
-          <RiMenu3Line
-            color="#020202"
-            size={27}
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
-        {toggleMenu && (
-          <div className="navbar-menu_container swing-in-top-fwd">
-            <div className="navbar-menu_container-links ">
-              <Menu />
-              <div className="navbar-menu_container-links-book">
-                <Link to="/profile/home">
-                  <img src={user?.picture} alt="" />
-                  <span>{user?.first_name}</span>
-                </Link>
+
+        <div className="navbar-book">
+          <Link to="/profile/home">
+            <img src={user?.picture} alt="" />
+            <span>{user?.first_name}</span>
+          </Link>
+        </div>
+        <div className="navbar-menu">
+          {toggleMenu ? (
+            <HiOutlineX
+              color="#020202"
+              size={32}
+              onClick={() => setToggleMenu(false)}
+            />
+          ) : (
+            <HiMenuAlt3
+              color="#020202"
+              size={32}
+              onClick={() => setToggleMenu(true)}
+            />
+          )}
+          {toggleMenu && (
+            <div className="navbar-menu_container swing-in-top-fwd">
+              <div className="navbar-menu_container-links ">
+                <Menu />
+                <div className="navbar-menu_container-links-book">
+                  <Link to="/profile/home">
+                    <img src={user?.picture} alt="" />
+                    <span>{user?.first_name}</span>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

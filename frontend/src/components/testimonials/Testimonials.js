@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Testimonials.css";
 import { FaStar } from "react-icons/fa";
 import ModalTestimonial from "../subComponents/modal-testimonial/ModalTestimonial";
+import ModalLogin from "../subComponents/modal-login/ModalLogin";
 
 const colors = {
   orange: "#f5d10d",
@@ -118,7 +119,7 @@ const Testimonials = () => {
       </div>
 
       {/* Button review */}
-      <div className="container-btn container d-block text-center">
+      <div className="container-btn container d-block">
         <button
           type="button"
           className="review-btn"
@@ -140,6 +141,7 @@ const Testimonials = () => {
 
       {/* Modal */}
       <ModalTestimonial />
+      {/* <ModalLogin /> */}
     </div>
   );
 };

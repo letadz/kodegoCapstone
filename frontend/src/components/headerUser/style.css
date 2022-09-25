@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 2.5rem;
   background-color: white;
   box-shadow: 0px -12px 35px 20px rgba(0, 0, 0, 0.58);
   -webkit-box-shadow: 0px -12px 35px 20px rgba(0, 0, 0, 0.58);
@@ -169,7 +169,7 @@
 }
 @media screen and (max-width: 550px) {
   .navbar {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 0.2rem;
   }
   .navbar-book {
     display: none;

@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  border: none;
 }
 
 .modal-schedule .modal-header {
@@ -45,7 +46,7 @@
 }
 
 .modal-schedule .message {
-  width: 43.4vw;
+  width: 43.35vw;
   height: calc(10rem + 0.3rem);
   /* width: calc(41.4rem + 0.3rem); */
 }
@@ -106,10 +107,37 @@
   box-shadow: inset 200px 0 0 0 #f6e71d;
 }
 
+.modal-schedule .react-date-picker {
+  width: 100%;
+}
+
+.modal-schedule .react-date-picker__wrapper {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 0.3rem;
+}
+
+.modal-schedule .react-date-picker__inputGroup {
+  text-align: start;
+}
+
+@media screen and (max-width: 1440px) {
+  .modal-schedule .message {
+    width: 42.8vw;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .modal-schedule .message {
     width: 41.8vw;
     height: calc(10rem + 0.3rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-schedule .message {
+    width: 41vw;
+    height: calc(6rem + 0.3rem);
   }
 }
 
@@ -124,7 +152,7 @@
   }
 
   .modal-schedule .message {
-    width: 72vw;
+    width: 75vw;
   }
 
   .modal-schedule .services {
@@ -134,5 +162,11 @@
 
   .modal-schedule .form-date {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .modal-schedule .message {
+    width: 73vw;
   }
 }

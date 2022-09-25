@@ -20,17 +20,17 @@
 }
 
 .faqs .accordion-body {
-    background-color: var(--color-white);
+  background-color: var(--color-white);
 }
 
 .faqs .accordion-button {
-    background-color: var(--color-grey);
+  background-color: var(--color-grey);
 }
 
 .faqs .faqs-title {
   position: relative;
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
   font-size: 2.15rem;
   font-weight: 600;
   text-align: start;
@@ -66,7 +66,7 @@
 
 .faqs .image-content {
   color: white;
-  text-shadow: 5px 1px 8px rgba(0,0,0,1);
+  text-shadow: 5px 1px 8px rgba(0, 0, 0, 1);
   width: 80%;
 }
 
@@ -88,7 +88,7 @@
     align-items: center;
     gap: 2rem;
   }
-  
+
   .faqs .accordion {
     width: 100%;
   }
@@ -105,17 +105,19 @@
     height: 23rem;
     width: 100%;
   }
-
 }
-
 
 @media screen and (max-width: 768px) {
   .faqs .faqs-content {
     padding: 2rem 0;
   }
+
+  .faqs .accordion {
+    margin-right: 0;
+  }
 }
 
-@media screen and (max-width: 756px){
+@media screen and (max-width: 756px) {
   .faqs .image-content {
     margin-left: 0;
   }
