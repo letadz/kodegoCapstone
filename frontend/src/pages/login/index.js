@@ -8,7 +8,7 @@ const Login = () => {
     <div>
       <Header />
       <LoginForm />
-      <RegisterForm />
+      <RegisterForm /> 
     </div>
   );
 };

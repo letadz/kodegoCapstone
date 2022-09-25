@@ -9,8 +9,8 @@ export function userReducer(
   //     verified: false,
   //     picture:
   //       "https://res.cloudinary.com/dmhcnhtng/image/upload/v1643044376/avatars/default_pic_jeaybr.png",
-  //   }
-  action
+  // } 
+ action
 ) {
   switch (action.type) {
     case "LOGIN":

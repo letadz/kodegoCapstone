@@ -61,12 +61,12 @@ const Header = () => {
         <div className="navbar-links_container">
           <Menu />
         </div>
-        <div className="navbar-login-register">
+        <div className="navbar-login">
           <button className="navbar-login">
             <Link to="/login">Login</Link>
           </button>
           <div className="navbar-register">
-            <Link to="/login">Register</Link>
+            <Link to="/register">Register</Link>
           </div>
         </div>
       </div>
