@@ -61,7 +61,7 @@ const Header = () => {
         <div className="navbar-links_container">
           <Menu />
         </div>
-        <div className="navbar-login">
+        <div className="navbar-login-register">
           <button className="navbar-login">
             <Link to="/login">Login</Link>
           </button>

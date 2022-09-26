@@ -6,69 +6,79 @@ const ModalSchedule = () => {
   const [date, setDate] = useState(new Date());
 
   return (
-      <div className="modal-schedule">
-        <div
-          className="modal fade text-center"
-          id="schedule"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="schedule-label">
-                  Book Schedule
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
+    <div className="modal-schedule">
+      <div className="modal fade text-center" id="schedule" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="schedule-label">
+                Book Schedule
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
 
-              <div className="modal-body">
-                <form className="schedule-form">
-                  <div className="form-floating">
+            <div className="modal-body">
+              <form className="schedule-form">
+                <div className="form-floating">
+                  <input
+                    type="text"
+                    className="form-control name"
+                    id="floatingName"
+                    placeholder="Name"
+                    required
+                  />
+                  <label htmlFor="floatingName">Name</label>
+                </div>
+
+                <div className="form-floating">
+                  <input
+                    type="text"
+                    className="form-control phone"
+                    id="floatingPhone"
+                    placeholder="Phone"
+                    required
+                  />
+                  <label htmlFor="floatingPhone">Phone</label>
+                </div>
+
+                <div className="form-floating flex-location">
+                  <input
+                    type="text"
+                    className="form-control location"
+                    id="floatingLocation"
+                    placeholder="Location"
+                    required
+                  />
+                  <label htmlFor="floatingLocation">Location</label>
+                </div>
+
+                <div className="form-floating">
+                  <textarea
+                    className="form-control message"
+                    placeholder="Message"
+                    id="floatingTextarea"
+                    required
+                  ></textarea>
+                  <label htmlFor="floatingTextarea">Message</label>
+                </div>
+
+                <div className="grid-container">
+                  <div className="form-floating flex-mileage">
                     <input
                       type="text"
-                      className="form-control name"
-                      id="floatingName"
-                      placeholder="Name"
+                      className="form-control mileage"
+                      id="floatingMileAge"
+                      placeholder="Mileage"
                       required
                     />
-                    <label htmlFor="floatingName">Name</label>
-                  </div>
-
-                  <div className="form-floating">
-                    <input
-                      type="text"
-                      className="form-control phone"
-                      id="floatingPhone"
-                      placeholder="Phone"
-                      required
-                    />
-                    <label htmlFor="floatingPhone">Phone</label>
-                  </div>
-
-                  <div className="form-floating flex-location">
-                    <input
-                      type="text"
-                      className="form-control location"
-                      id="floatingLocation"
-                      placeholder="Location"
-                      required
-                    />
-                    <label htmlFor="floatingLocation">Location</label>
-                  </div>
-
-                  <div className="form-floating">
-                    <textarea
-                      className="form-control message"
-                      placeholder="Message"
-                      id="floatingTextarea"
-                      required
-                    ></textarea>
-                    <label htmlFor="floatingTextarea">Message</label>
+                    <label className="label-mileage" htmlFor="floatingMileAge">
+                      Estimated Mileage
+                    </label>
                   </div>
 
                   <div className="form-group services">
@@ -111,18 +121,19 @@ const ModalSchedule = () => {
                     </select>
                     <span className="select-arrow"></span>
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
+            </div>
 
-              <div className="modal-footer">
-                <button type="button" className="btn-submit">
-                  Submit Now
-                </button>
-              </div>
+            <div className="modal-footer">
+              <button type="button" className="btn-submit">
+                Submit Now
+              </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
   );
 };
 
