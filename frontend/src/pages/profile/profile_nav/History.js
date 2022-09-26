@@ -1,44 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useMemo, useReducer, useState } from "react";
 import { useSelector } from "react-redux";
-import BookHistory from "../../../components/book_history";
-import { historyReducer } from "../../../functions/reducers";
+import Hist from "../../../components/book_history/Hist";
 
-const History = () => {
+const History = ({ profile }) => {
   const { user } = useSelector((state) => ({ ...state }));
-
-  const [{ loading, error, history }, dispatch] = useReducer(historyReducer, {
-    loading: false,
-    history: [],
-    error: "",
-  });
-  useEffect(() => {
-    getAllBooking();
-  }, []);
-  const getAllBooking = async () => {
-    try {
-      dispatch({
-        type: "BOOKS_REQUEST",
-      });
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/getAllBooking`,
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
-      dispatch({
-        type: "BOOKS_SUCCESS",
-        payload: data,
-      });
-    } catch (error) {
-      dispatch({
-        type: "BOOKS_ERROR",
-        payload: error.response.data.message,
-      });
-    }
-  };
 
   const columns = useMemo(
     () => [
@@ -49,11 +15,11 @@ const History = () => {
         columns: [
           {
             Header: "Brand",
-            accessor: "history.car.car_brand",
+            accessor: "profile.car.car_brand",
           },
           {
             Header: "Model",
-            accessor: "history.car.car_model",
+            accessor: "profile.car.car_model",
           },
         ],
       },
@@ -64,11 +30,11 @@ const History = () => {
         columns: [
           {
             Header: "Service",
-            accessor: "history.service",
+            accessor: "profile.history.service",
           },
           {
             Header: "Schedule",
-            accessor: "history.date_book",
+            accessor: "profile.history.date_book",
           },
         ],
       },
@@ -80,7 +46,24 @@ const History = () => {
       <div className="history_header">
         <h3>Services History</h3>
       </div>
-      <BookHistory history={history} columns={columns} />
+      <table>
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Service</th>
+            <th>Schedule</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {profile.history &&
+            profile.history.length &&
+            profile.history.map((hist) => (
+              <Hist key={hist._id} columns={columns} hist={hist} user={user} />
+            ))}
+        </tbody>
+      </table>
     </div>
   );
 };

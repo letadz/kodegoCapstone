@@ -31,6 +31,18 @@ const carSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    repairHistory: [
+      {
+        history: {
+          type: ObjectId,
+          ref: "History",
+        },
+        savedAt: {
+          type: Date,
+          default: new Date(),
+        },
+      },
+    ],
   },
   {
     timestamps: true,

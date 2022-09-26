@@ -33,6 +33,7 @@ const Profile = () => {
     profile: {},
     error: "",
   });
+
   useEffect(() => {
     getProfile();
   }, [userName]);
@@ -66,9 +67,9 @@ const Profile = () => {
   };
   const routes = useRoutes([
     { path: "/home", element: <ProfileHome profile={profile} /> },
-    { path: "/cars", element: <Cars /> },
+    { path: "/cars", element: <Cars profile={profile} /> },
     { path: "/settings", element: <Settings user={user} /> },
-    { path: "/history", element: <History /> },
+    { path: "/history", element: <History profile={profile} /> },
   ]);
 
   const dispatchs = useDispatch();
@@ -80,7 +81,6 @@ const Profile = () => {
     });
     navigates("/");
   };
-
   return (
     <>
       <div className="profile_nav">

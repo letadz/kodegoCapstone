@@ -63,24 +63,13 @@ const userSchema = mongoose.Schema(
       default: false,
     },
 
-    repairHistory: [
+    saveCars: [
       {
         car: {
           type: ObjectId,
           ref: "Car",
         },
-        service: {
-          type: String,
-        },
-        image: {
-          type: String,
-        },
-
-        bookAt: {
-          type: Date,
-          default: new Date(),
-        },
-        createdAt: {
+        savedAt: {
           type: Date,
           default: new Date(),
         },

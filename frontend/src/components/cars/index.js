@@ -6,8 +6,7 @@ import { historyReducer } from "../../functions/reducers";
 import CreateBooking from "../../pages/profile/createHistory";
 import "./style.css";
 
-const Car = ({ car }) => {
-  const { user } = useSelector((state) => ({ ...state }));
+const Car = ({ car, user }) => {
   const [visible, setVisible] = useState(false);
 
   return (
