@@ -10,6 +10,7 @@ import Profile from "./pages/profile";
 import LoggedinRoutes from "./routes/LoggedinRoutes";
 import NotLoggedinRoutes from "./routes/NotLoggedinRoutes";
 import ArrowButton from "./components/subComponents/scroll-top/ScrollToTop";
+import ResetPassword from "./pages/reset";
 
 const App = () => {
   return (
@@ -20,11 +21,13 @@ const App = () => {
         <Route element={<LoggedinRoutes />}>
           <Route path="/activate/:token" element={<Activate />} />
           <Route path="/*" element={<UserHome />} />
-          <Route path="/profile//*" element={<Profile />} />
+          {/* <Route path="/profile//*" element={<Profile />} /> */}
+          <Route path="/profile/:username/*" element={<Profile />} />
         </Route>
         <Route element={<NotLoggedinRoutes />}>
           <Route path="/login" element={<Login />} />
         </Route>
+        <Route path="/reset" element={<ResetPassword />} />
       </Routes>
     </div>
   );

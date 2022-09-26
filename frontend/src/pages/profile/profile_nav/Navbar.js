@@ -1,12 +1,54 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useReducer } from "react";
 import { useSelector } from "react-redux";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import LoggedInHeader from "../../../components/headerUser";
+import { profileReducer } from "../../../functions/reducers";
 import "../style.css";
 
 const Navbar = () => {
   const { user } = useSelector((user) => ({ ...user }));
+  const { username } = useParams();
+  const navigate = useNavigate();
+
+  const userName = username === undefined ? user.username : username;
+  const [{ loading, error, profile }, dispatch] = useReducer(profileReducer, {
+    loading: false,
+    profile: {},
+    error: "",
+  });
+  useEffect(() => {
+    getProfile();
+  }, [userName]);
+  const getProfile = async () => {
+    try {
+      dispatch({
+        type: "PROFILE_REQUEST",
+      });
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/getProfile/${userName}`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      if (data.ok === false) {
+        navigate("/");
+      } else {
+        dispatch({
+          type: "PROFILE_SUCCESS",
+          payload: data,
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: "PROFILE_ERROR",
+        payload: error.response.data.message,
+      });
+    }
+  };
 
   return (
     <>
@@ -14,25 +56,27 @@ const Navbar = () => {
         <div className="navigation">
           <Link to="/">Back to Home</Link>
 
-          <Link className="navigation_name" to="/profile/home">
+          <Link className="navigation_name" to={`/profile/${userName}/home`}>
             <div className="profile_pic">
-              <img src={user.picture} alt="" />
+              <img src={profile.picture} alt="" />
             </div>
 
             <div className="profile_text">
-              <span>{user.first_name}</span>
-              <span>{user.email}</span>
+              <span>
+                {profile.first_name} {profile.last_name}
+              </span>
+              <span>{profile.email}</span>
             </div>
           </Link>
 
           <div className="menu">
-            <Link to="/profile/cars" className="menu_item">
+            <Link to={`/profile/${userName}/cars`} className="menu_item">
               Cars
             </Link>
-            <Link to="/profile/history" className="menu_item">
+            <Link to={`/profile/${userName}/history`} className="menu_item">
               Service History
             </Link>
-            <Link to="/profile/settings" className="menu_item">
+            <Link to={`/profile/${userName}/settings`} className="menu_item">
               Settings
             </Link>
           </div>

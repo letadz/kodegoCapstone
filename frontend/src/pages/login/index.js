@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
-import LoginForm from "../../components/form/LoginForm";
-import RegisterForm from "../../components/form/RegisterForm";
 import { Header } from "../../components";
+import RegisterForm from "../../components/form/RegisterForm";
+import LoginForm from "../../components/form/LoginForm";
 const Login = () => {
   return (
     <div>

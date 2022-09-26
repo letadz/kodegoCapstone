@@ -59,10 +59,10 @@ const Activate = () => {
     }
   };
   return (
-    <>
+    <div>
       {success && (
         <ActivateForm
-          type="error"
+          type="success"
           header="Account verification success"
           text={success}
           loading={loading}
@@ -86,7 +86,7 @@ const Activate = () => {
       <About />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 };
 
