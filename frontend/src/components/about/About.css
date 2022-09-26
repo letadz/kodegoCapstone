@@ -8,23 +8,23 @@
 
 .about .about-title {
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2.15rem;
   font-weight: 600;
   text-align: end;
-  padding: 1rem;
-  margin-bottom: 2rem;
+  padding: 0 0 1rem 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .about .about-title::after {
   content: "";
   display: block;
   position: absolute;
-  top: 4.5rem;
-  max-width: 10.5rem;
+  max-width: 9.6rem;
   width: 100%;
-  height: 5px;
-  left: 94%;
-  transform: translateX(-94%);
+  height: 0.3rem;
+  bottom: 0.4rem;
+  right: 1.3%;
+  transform: translateX(1.3%);
   background: var(--color-orange);
 }
 
@@ -49,11 +49,18 @@
 
 .about .about-right {
   width: min(100%, 40rem);
+  color: var(--color-black);
+  line-height: 1.6;
 }
 
-.about .about-text {
-  font-size: 1.125rem;
-  font-weight: 600;
+.about :where(.about-text-top, .about-text-bottom) {
+  text-align: end;
+}
+
+@media screen and (max-width: 1024px) {
+  .about .about-left {
+    width: 60%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -67,7 +74,7 @@
   }
 
   .about .about-left {
-    width: 90%;
+    width: 92%;
     order: 1;
   }
 
@@ -80,13 +87,17 @@
   }
 
   .about .about-title::after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 52%;
+    transform: translateX(-52%);
+  }
+
+  .about :where(.about-text-top, .about-text-bottom) {
+    text-align: start;
   }
 }
 
 @media screen and (max-width: 425px) {
-    .about .about-left {
-        width: 100%;
-      }
+  .about .about-left {
+    width: 100%;
+  }
 }

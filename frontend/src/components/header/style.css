@@ -116,21 +116,20 @@
 .navbar-logout,
 .navbar-logout-menu {
   padding: 0.5rem 1.5rem;
-  border-radius: 12px;
   margin-right: 10px;
   background-color: var(--color-black);
   text-decoration: none;
-  transition: 0.2s ease;
-  border: 1px solid var(--color-black);
+  transition: 0.3s ease-in;
+  border-radius: 5px;
+  border: none;
+  /* border: 1px solid var(--color-black); */
 }
 
-.navbar-login:hover,
-.navbar-logout:hover,
-.navbar-logout-menu:hover {
+/* .navbar-login:hover {
   color: var(--color-black);
   background-color: var(--color-orange);
   border: 1px solid var(--color-orange);
-}
+} */
 
 .navbar-login a {
   color: var(--color-white);
@@ -146,21 +145,27 @@
   cursor: pointer;
   box-shadow: inset 200px 0 0 0 var(--color-orange);
 }
+
+.navbar-login:hover a {
+  color: var(--color-black);
+}
+
 .navbar-register {
   padding: 0.5rem 1.5rem;
-  border-radius: 10px;
   color: var(--color-black);
   border: 1px solid var(--color-black);
   background-color: transparent;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: 0.3s ease-in;
+  border-radius: 5px;
 }
 
 .navbar-register:hover {
-  background-color: var(--color-orange);
+  cursor: pointer;
+  box-shadow: inset 200px 0 0 0 var(--color-orange);
   border: 1px solid var(--color-orange);
-  text-decoration: none;
 }
+
 .navbar-links p a {
   color: var(--color-black);
 }
@@ -196,9 +201,9 @@
     height: 40px;
   }
 }
-/* 
+
 @media screen and (max-width: 550px) {
   .navbar {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0.2rem;
   }
-} */
+}

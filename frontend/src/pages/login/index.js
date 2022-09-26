@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import "./style.css";
+import LoginForm from "../../components/login/LoginForm";
+import RegisterForm from "../../components/login/RegisterForm";
 import { Header } from "../../components";
-import RegisterForm from "../../components/form/RegisterForm";
-import LoginForm from "../../components/form/LoginForm";
 const Login = () => {
+  const [visible, setVisible] = useState(false);
   return (
-    <div>
+    <>
       <Header />
-      <LoginForm />
-      <RegisterForm />
-    </div>
+      <div className="login">
+        <div className="login_wrapper">
+          <LoginForm setVisible={setVisible} />
+          {visible && <RegisterForm setVisible={setVisible} />}
+        </div>
+      </div>
+    </>
   );
 };
 

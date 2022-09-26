@@ -24,7 +24,7 @@
 
 // export default Header;
 import React, { useState } from "react";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 import "./style.css";
@@ -61,27 +61,27 @@ const Header = () => {
         <div className="navbar-links_container">
           <Menu />
         </div>
-        <div className="navbar-login-register">
+        <div className="navbar-login">
           <button className="navbar-login">
             <Link to="/login">Login</Link>
           </button>
           <div className="navbar-register">
-            <Link to="/login">Register</Link>
+            <Link to="/register">Register</Link>
           </div>
         </div>
       </div>
 
       <div className="navbar-menu">
         {toggleMenu ? (
-          <RiCloseLine
+          <HiOutlineX
             color="#020202"
-            size={27}
+            size={32}
             onClick={() => setToggleMenu(false)}
           />
         ) : (
-          <RiMenu3Line
+          <HiMenuAlt3
             color="#020202"
-            size={27}
+            size={32}
             onClick={() => setToggleMenu(true)}
           />
         )}

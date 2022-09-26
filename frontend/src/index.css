@@ -16,15 +16,15 @@
 }
 
 .orange_btn {
-  border: none;
+  border: 2px solid var(--color-dgray);
   outline: none;
   background: var(--color-orange);
-  padding: 9px 12px;
+  padding: 8.5px 12px;
   border-radius: 7px;
   font-family: inherit;
   font-weight: 600;
   font-size: 14px;
-  color: black;
+  color: var(--color-dgray);
   display: flex;
   align-items: center;
   justify-content: center;

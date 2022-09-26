@@ -9,6 +9,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 export default function RegisterForm({ setVisible }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -46,24 +47,20 @@ export default function RegisterForm({ setVisible }) {
   const days = Array.from(new Array(getDays()), (val, index) => 1 + index);
   const registerValidation = Yup.object({
     first_name: Yup.string()
-      .required("What's your First name ?")
-      .min(2, "Fisrt name must be between 2 and 16 characters.")
-      .max(16, "Fisrt name must be between 2 and 16 characters.")
+      .required("First name is required")
+      .min(2, "First name must be between 2 and 16 characters.")
+      .max(16, "First name must be between 2 and 16 characters.")
       .matches(/^[aA-zZ]+$/, "Numbers and special characters are not allowed."),
     last_name: Yup.string()
-      .required("What's your Last name ?")
+      .required("Last name is required")
       .min(2, "Last name must be between 2 and 16 characters.")
       .max(16, "Last name must be between 2 and 16 characters.")
       .matches(/^[aA-zZ]+$/, "Numbers and special characters are not allowed."),
     email: Yup.string()
-      .required(
-        "You'll need this when you log in and if you ever need to reset your password."
-      )
+      .required("Email address is required.")
       .email("Enter a valid email address."),
     password: Yup.string()
-      .required(
-        "Enter a combination of at least six numbers,letters and punctuation marks(such as ! and &)."
-      )
+      .required("Password is required.")
       .min(6, "Password must be atleast 6 characters.")
       .max(36, "Password can't be more than 36 characters"),
   });
@@ -107,9 +104,10 @@ export default function RegisterForm({ setVisible }) {
     <div className="blur">
       <div className="register">
         <div className="register_header">
-          <i className="exit_icon" onClick={() => setVisible(false)}></i>
-          <span>Sign Up</span>
-          <span>it's quick and easy</span>
+          <i className="exit_icon" onClick={() => setVisible(false)}>
+            x
+          </i>
+          <span>Create Account</span>
         </div>
         <Formik
           enableReinitialize
@@ -168,7 +166,7 @@ export default function RegisterForm({ setVisible }) {
               <div className="reg_line">
                 <RegisterInput
                   type="text"
-                  placeholder="Mobile number or email address"
+                  placeholder="Email address"
                   name="email"
                   onChange={handleRegisterChange}
                 />
@@ -206,14 +204,11 @@ export default function RegisterForm({ setVisible }) {
                   genderError={genderError}
                 />
               </div>
-              <div className="reg_infos">
-                By clicking Sign Up, you agree to our{" "}
-                <span>Terms, Data Policy &nbsp;</span>
-                and <span>Cookie Policy.</span> You may receive SMS
-                notifications from us and can opt out at any time.
-              </div>
+
               <div className="reg_btn_wrapper">
-                <button className="blue_btn open_signup">Sign Up</button>
+                <button className="orange_btn open_signup">
+                  Create Account
+                </button>
               </div>
               <DotLoader color="#1876f2" loading={loading} size={30} />
               {error && <div className="error_text">{error}</div>}

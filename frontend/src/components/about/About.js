@@ -13,14 +13,14 @@ const About = () => {
           <div className="about-right">
           <h1 className="about-title">About Us</h1>
 
-            <p className="about-text">
+            <p className="about-text-top">
               We offer a full range of garage services to vehicle owners located
               in Seaside Blvd. Pasay, Metro Manila. All mechanic services are
               performed by highly qualified mechanics. We can handle any car
               problem.
             </p>
 
-            <p>
+            <p className="about-text-bottom">
               Our professionals know how to handle a wide range of car services.
               Whether you drive a passenger car or medium sized truck or SUV,
               our mechanics strive to ensure that your vehicle will be

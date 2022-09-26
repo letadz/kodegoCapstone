@@ -34,11 +34,10 @@
 }
 
 .offers .item {
-  width: calc(30% - 2rem);
+  width: calc(29% - 2rem);
   margin: 0.5rem 1rem;
   position: relative;
   background: #eee;
-  cursor: pointer;
   transition: 0.5s all;
 }
 
@@ -64,7 +63,7 @@
   content: "";
   position: absolute;
   top: 0;
-  height: 63%;
+  height: 61%;
   width: 100%;
   background-color: var(--color-orange);
   opacity: 0.1;
@@ -74,19 +73,19 @@
   background: url("../../images/services/hail-damage-repair.jpg") no-repeat
     center;
   background-size: cover;
-  height: 15.625rem;
+  height: 16rem;
 }
 
 .offers .item2-img {
   background: url("../../images/services/engine-repair.jpg") no-repeat center;
   background-size: cover;
-  height: 15.625rem;
+  height: 16rem;
 }
 
 .offers .item3-img {
   background: url("../../images/services/exterior.jpg") no-repeat center;
   background-size: cover;
-  height: 15.625rem;
+  height: 16rem;
 }
 
 .offers .item1-img::before,
@@ -107,7 +106,7 @@
 }
 
 .offers .item-content {
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
 }
 
 .offers .item-title {
@@ -125,5 +124,21 @@
 @media screen and (max-width: 768px) {
   .offers .item {
     width: calc(80% - 2rem);
+  }
+
+  .offers .item:hover::after{
+    height: 63.5%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .offers .item:hover::after{
+    height: 59%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .offers .item:hover::after{
+    height: 57%;
   }
 }

@@ -5,6 +5,7 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
+import Copyright from "../copyright/Copyright";
 import "./Footer.css";
 
 const Footer = () => {
@@ -33,10 +34,10 @@ const Footer = () => {
             <a href="/">
               <span>Customer Care</span>
             </a>
-            <a href="/">
+            <a href="https://www.messenger.com/" target="_blank" rel="noreferrer">
               <span>Chat</span>
             </a>
-            <a href="/">
+            <a href="mailto:magsautorepairshop@hotmail.com">
               <span>Email Address</span>
             </a>
           </div>
@@ -77,13 +78,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="copyright-container">
-          <div className="copyright-content">
-            <span>
-              &copy; Mag's Auto Repair Philippines. All Right Reserved
-            </span>
-          </div>
-        </div>
+        <Copyright />
         
       </div>
     </div>

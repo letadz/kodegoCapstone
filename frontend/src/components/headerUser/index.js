@@ -81,7 +81,7 @@ const LoggedInHeader = () => {
   };
   return (
     <div id="home" className="navbar">
-      <div className="navbar-links">
+      <div className="navbar-links container">
         <div className="navbar-links_logo">
           <a href="#home">
             <img src={Logo} alt="Logo" />
