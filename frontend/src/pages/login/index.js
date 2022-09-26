@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
-import LoginForm from "../../components/form/LoginForm";
-import RegisterForm from "../../components/form/RegisterForm";
+import LoginForm from "../../components/form/loginForm";
+import RegisterForm from "../../components/form/registerForm";
 import { Header } from "../../components";
 const Login = () => {
   return (
