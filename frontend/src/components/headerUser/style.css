@@ -48,7 +48,6 @@
 }
 .navbar-book:hover {
   color: var(--color-black);
-  background-color: var(--color-orange);
 }
 .navbar-book a {
   display: flex;
@@ -153,13 +152,20 @@
   align-items: center;
   margin: 0 16px;
 }
-
+.navbar-logout,
+.navbar-logout-menu {
+  color: white;
+  margin-left: 1rem;
+}
 @media screen and (max-width: 1050px) {
   .navbar-links_container {
     display: none;
   }
   .navbar-menu {
     display: flex;
+  }
+  .navbar-logout {
+    display: none;
   }
 }
 @media screen and (max-width: 700px) {
@@ -182,7 +188,6 @@
   }
   .navbar-menu_container-links-book:hover {
     color: var(--color-black);
-    background-color: var(--color-orange);
   }
   .navbar-links_logo img {
     height: 40px;

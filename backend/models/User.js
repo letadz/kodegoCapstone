@@ -62,6 +62,19 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    saveCars: [
+      {
+        car: {
+          type: ObjectId,
+          ref: "Car",
+        },
+        savedAt: {
+          type: Date,
+          default: new Date(),
+        },
+      },
+    ],
   },
   {
     timestamps: true,

@@ -7,7 +7,10 @@ const { generateToken } = require("../helpers/tokens");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { sendVerificationEmail } = require("../helpers/mailer");
+const { sendVerificationEmail, sendResetCode } = require("../helpers/mailer");
+const Code = require("../models/Code");
+const generateCode = require("../helpers/generateCode");
+const Car = require("../models/Car");
 
 exports.register = async (req, res) => {
   try {
@@ -166,5 +169,173 @@ exports.sendVerification = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+};
+exports.findUser = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email }).select("-password");
+    if (!user) {
+      return res.status(400).json({
+        message: "Account does not exists",
+      });
+    }
+    return res.status(200).json({
+      email: user.email,
+      picture: user.picture,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+exports.sendResetPasswordCode = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email }).select("-password");
+    await Code.findOneAndRemove({ user: user._id });
+    const code = generateCode(5);
+    const savedCode = await new Code({
+      code,
+      user: user._id,
+    }).save();
+    sendResetCode(user.email, user.first_name, code);
+    return res.status(200).json({
+      message: "Email reset code has been sent to your email",
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+exports.validateResetCode = async (req, res) => {
+  try {
+    const { email, code } = req.body;
+    const user = await User.findOne({ email });
+    const Dbcode = await Code.findOne({ user: user._id });
+    if (Dbcode.code !== code) {
+      return res.status(400).json({
+        message: "Verification code is wrong..",
+      });
+    }
+    return res.status(200).json({ message: "ok" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.changePassword = async (req, res) => {
+  const { email, password } = req.body;
+
+  const cryptedPassword = await bcrypt.hash(password, 12);
+  await User.findOneAndUpdate(
+    { email },
+    {
+      password: cryptedPassword,
+    }
+  );
+  return res.status(200).json({ message: "ok" });
+};
+exports.addCar = async (req, res) => {
+  try {
+    const car = await new Car(req.body).save();
+    res.json(car);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+const cloudinary = require("cloudinary");
+const fs = require("fs");
+const History = require("../models/History");
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
+exports.uploadImage = async (req, res) => {
+  try {
+    const { path } = req.body;
+    let files = Object.values(req.files).flat();
+    let images = [];
+    for (const file of files) {
+      const url = await uploadToCloudinary(file, path);
+      images.push(url);
+      removeTmp(file.tempFilePath);
+    }
+    res.json(images);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+const uploadToCloudinary = async (file, path) => {
+  return new Promise((resolve) => {
+    cloudinary.v2.uploader.upload(
+      file.tempFilePath,
+      {
+        folder: path,
+      },
+      (err, res) => {
+        if (err) {
+          removeTmp(file.tempFilePath);
+          return res.status(400).json({ message: "Upload image failed." });
+        }
+        resolve({
+          url: res.secure_url,
+        });
+      }
+    );
+  });
+};
+
+const removeTmp = (path) => {
+  fs.unlink(path, (err) => {
+    if (err) throw err;
+  });
+};
+
+exports.getAllCars = async (req, res) => {
+  try {
+    const cars = await Car.find()
+      // .populate("user", "first_name last_name picture username gender")
+      .sort({ createdAt: -1 });
+    res.json(cars);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getProfile = async (req, res) => {
+  try {
+    const { username } = req.params;
+    const profile = await User.findOne({ username }).select("-password");
+    if (!profile) {
+      return res.json({ ok: false });
+    }
+    const cars = await Car.find({ user: profile._id }).populate("user");
+    const history = await History.find({
+      user: profile._id,
+    }).populate("user");
+    res.json({ ...profile.toObject(), cars, history });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+exports.createBook = async (req, res) => {
+  try {
+    const book = await new History(req.body).save();
+    res.json(book);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getAllBooking = async (req, res) => {
+  try {
+    const bookings = await History.find()
+      .populate("car")
+      .sort({ createdAt: -1 });
+    res.json(bookings);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
   }
 };

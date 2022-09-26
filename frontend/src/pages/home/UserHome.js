@@ -18,7 +18,7 @@ import LoggedInHeader from "../../components/headerUser";
 
 const UserHome = () => {
   return (
-    <>
+    <div>
       <LoggedInHeader />
       <Hero />
       <Offers />
@@ -29,7 +29,7 @@ const UserHome = () => {
       <About />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 };
 

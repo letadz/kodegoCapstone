@@ -112,7 +112,9 @@
 .navbar-menu_container-links-book {
   display: none;
 }
-.navbar-login {
+.navbar-login,
+.navbar-logout,
+.navbar-logout-menu {
   padding: 0.5rem 1.5rem;
   margin-right: 10px;
   background-color: var(--color-black);

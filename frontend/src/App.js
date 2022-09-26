@@ -10,6 +10,7 @@ import Profile from "./pages/profile";
 import LoggedinRoutes from "./routes/LoggedinRoutes";
 import NotLoggedinRoutes from "./routes/NotLoggedinRoutes";
 import ArrowButton from "./components/subComponents/scroll-top/ScrollToTop";
+import ResetPassword from "./pages/reset";
 import { Services } from "./components";
 import EngineRepair from "./components/services/service/engine-repair/EngineRepair";
 import TransmissionRepair from "./components/services/service/transmission-repair/TransmissionRepair";
@@ -74,12 +75,13 @@ const App = () => {
         <Route element={<LoggedinRoutes />}>
           <Route path="/activate/:token" element={<Activate />} />
           <Route path="/*" element={<UserHome />} />
+          <Route path="/profile/:username/*" element={<Profile />} />
           <Route path="/services//*" element={<Services />} />
-          <Route path="/profile//*" element={<Profile />} />
         </Route>
         <Route element={<NotLoggedinRoutes />}>
           <Route path="/login" element={<Login />} />
         </Route>
+        <Route path="/reset" element={<ResetPassword />} />
       </Routes>
     </div>
   );

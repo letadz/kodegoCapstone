@@ -6,4 +6,81 @@
   --color-grey: #e8e8e8;
   --color-orange: #f5d10d;
   --color-white: #fff;
+  --color-dgray: rgb(69, 68, 68);
+  --color-red: rgb(251, 20, 20);
+  --border-color: #ccced2;
+  --shadow-1: rgba(0, 0, 0, 0.2);
+  --shadow-2: rgba(0, 0, 0, 0.1);
+  --shadow-3: rgba(0, 0, 0, 0.3);
+  --shadow-inset: rgba(255, 255, 255, 0.5);
+}
+
+.orange_btn {
+  border: 2px solid var(--color-dgray);
+  outline: none;
+  background: var(--color-orange);
+  padding: 8.5px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-dgray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.gray_btn {
+  border: none;
+  outline: none;
+  background: var(--color-dgray);
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.red_btn {
+  border: none;
+  outline: none;
+  background: var(--color-red);
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.768);
+  bottom: 0;
+  z-index: 99;
+}
+.small_circle {
+  position: relative;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 11px;
+  background: var(--bg-third);
+  cursor: pointer;
 }
