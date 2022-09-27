@@ -55,59 +55,58 @@ const AddCar = ({ setVisible, user }) => {
           </div>
           <span>Add Car</span>
         </div>
-        <form
+        <form className="addCar_form"
           onSubmit={() => {
             carSubmit();
           }}
           encType="multipart/form-data"
         >
-          <div className="input-group mb-3">
-            <label htmlFor="car_brand" className="input-group-text">
-              Brand
-            </label>
+          <div className="form-floating">
             <input
-              name="car_brand"
-              id="car_brand"
               type="text"
+              className="form-control brand"
+              id="car_brand"
+              placeholder="Brand"
               onChange={(e) => setCar_brand(e.target.value)}
             />
+            <label htmlFor="car_brand">Brand</label>
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="car_model" className="input-group-text">
-              Model
-            </label>
+
+          <div className="form-floating">
             <input
-              name="car_model"
-              id="car_model"
               type="text"
+              className="form-control model"
+              id="car_model"
+              placeholder="Model"
               onChange={(e) => setCar_model(e.target.value)}
             />
+            <label htmlFor="car_model">Model</label>
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="car_name" className="input-group-text">
-              Year
-            </label>
+
+          <div className="form-floating">
             <input
               type="number"
-              name="car_year"
+              className="form-control year"
               id="car_year"
+              placeholder="Year"
               min="1900"
               max="2022"
               step="1"
               value={car_year}
               onChange={(e) => setCar_year(e.target.value)}
             />
+            <label htmlFor="car_year">Year</label>
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="car_variant" className="input-group-text">
-              Variant
-            </label>
+
+          <div className="form-floating">
             <input
-              name="car_variant"
+              type="number"
+              className="form-control variant"
               id="car_variant"
-              type="text"
+              placeholder="Variant"
               onChange={(e) => setCar_variant(e.target.value)}
             />
+            <label htmlFor="car_variant">Variant</label>
           </div>
 
           <button className="orange_btn">Add Car</button>

@@ -61,48 +61,51 @@ const CreateBooking = ({ setVisible, user, car }) => {
             {car.car_brand} {car.car_model}
           </span>
         </div>
-        <form
+        <form className="addBook_form"
           onSubmit={() => {
             bookingSubmit();
           }}
         >
-          <div className="input-group mb-3">
-            <label htmlFor="service" className="input-group-text">
-              Select Service
-            </label>
+          <div className="form-group services">
             <select
+              className="form-control"
               name="service"
               id="service"
               onChange={(e) => setService(e.target.value)}
             >
-              <option value="Body & Paint">Body & Paint</option>
-              <option value="Dealer Option Service">
-                Dealer Option Service
-              </option>
-              <option value="Express Maintenance">Express Maintenance</option>
-              <option value="General Service">General Service</option>
-              <option value="Preventive Maintenance">
-                Preventive Maintenance
-              </option>
-              <option value="Service Campaign">Service Campaign</option>
+              <optgroup label="Select Service">
+                <option value="Body & Paint">Body & Paint</option>
+                <option value="Dealer Option Service">
+                  Dealer Option Service
+                </option>
+                <option value="Express Maintenance">Express Maintenance</option>
+                <option value="General Service">General Service</option>
+                <option value="Preventive Maintenance">
+                  Preventive Maintenance
+                </option>
+                <option value="Service Campaign">Service Campaign</option>
+              </optgroup>
             </select>
+            <span className="select-arrow"></span>
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="mileAge" className="input-group-text">
-              Etimated Mileage
-            </label>
+
+          <div className="form-floating flex-mileage">
             <input
-              name="mileAge"
-              id="mileAge"
               type="text"
-              placeholder="Eg. 1000"
+              className="form-control mileage"
+              id="floatingMileAge"
+              placeholder="Mileage"
               onChange={(e) => setMileAge(e.target.value)}
             />
-          </div>
-          <div className="input-group mb-3">
-            <label htmlFor="date_book" className="input-group-text">
-              Preffered Date
+            <label className="label-mileage" htmlFor="floatingMileAge">
+              Estimated Mileage
             </label>
+          </div>
+
+          <div className="date">
+            {/* <label htmlFor="date_book" className="input-group-text">
+              Preffered Date
+            </label> */}
             <input
               asp-for="date_book"
               asp-format="{MM-dd-yyyy}"
@@ -112,45 +115,32 @@ const CreateBooking = ({ setVisible, user, car }) => {
               onChange={(e) => setDate_book(e.target.value)}
             />
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="preferred_time" className="input-group-text">
-              Preffered Time
-            </label>
-            <select
-              name="preferred_time"
-              id="preferred_time"
-              onChange={(e) => setPreferred_time(e.target.value)}
-            >
-              <option value="07:30 AM">07:30 AM</option>
-              <option value="07:50 AM">07:50 AM</option>
-              <option value="08:30 AM">08:30 AM</option>
-              <option value="08:50 AM">08:50 AM</option>
-              <option value="09:30 AM">09:30 AM</option>
-              <option value="09:50 AM">09:50 AM</option>
-              <option value="10:30 AM">10:30 AM</option>
-              <option value="10:50 AM">10:50 AM</option>
-              <option value="11:30 AM">11:30 AM</option>
-              <option value="11:50 AM">11:50 AM</option>
-              <option value="12:30 PM">12:30 PM</option>
-              <option value="12:50 PM">12:50 PM</option>
-              <option value="01:30 PM">01:30 PM</option>
-              <option value="01:50 PM">01:50 PM</option>
-              <option value="02:30 PM">02:30 PM</option>
-              <option value="02:50 PM">02:50 PM</option>
-              <option value="03:30 PM">03:30 PM</option>
+
+          <div className="form-group">
+            <select className="form-control time" required>
+              <optgroup label="Preffered Time">
+                <option>09:00 AM - 10:00 AM</option>
+                <option>10:00 AM - 11:00 AM</option>
+                <option>11:00 AM - 12:00 PM</option>
+                <option>12:00 PM - 01:00 PM</option>
+                <option>01:00 PM - 02:00 PM</option>
+                <option>02:00 PM - 03:00 PM</option>
+                <option>03:00 PM - 04:00 PM</option>
+                <option>04:00 PM - 05:00 PM</option>
+                <option>05:00 PM - 06:00 PM</option>
+              </optgroup>
             </select>
+            <span className="select-arrow"></span>
           </div>
-          <div className="input-group mb-3">
-            <label htmlFor="book_notes" className="input-group-text">
-              Notes
-            </label>
+
+          <div className="form-floating">
             <textarea
-              type="text"
-              id="book_notes"
-              name="book_notes"
-              placeholder="Type notes here .."
+              className="form-control notes"
+              placeholder="Notes"
+              id="floatingNotes"
               onChange={(e) => setBook_notes(e.target.value)}
-            />
+            ></textarea>
+            <label htmlFor="floatingNotes">Notes</label>
           </div>
 
           <button className="orange_btn">Book Service</button>
