@@ -20,9 +20,22 @@ const Car = ({ car, user }) => {
 
       <div className="car_text">
         <h3>{car.car_brand}</h3>
-        <span>{car.car_model}</span>
-        <span>{new Date(car.car_year).getFullYear()}</span>
-        <span>{car.car_variant}</span>
+        <div className="car_details">
+          <div className="model">
+            <span className="car_info">Model:</span>
+            <span>{car.car_model}</span>
+          </div>
+
+          <div className="year">
+            <span className="car_info">Year:</span>
+            <span>{new Date(car.car_year).getFullYear()}</span>
+          </div>
+
+          <div className="variant">
+            <span className="car_info">Variant:</span>
+            <span>{car.car_variant}</span>
+          </div>
+        </div>
       </div>
 
       <div className="btns_container">
