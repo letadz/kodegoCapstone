@@ -66,7 +66,7 @@ const Header = () => {
             <Link to="/login">Login</Link>
           </button>
           <div className="navbar-register">
-            <Link to="/register">Register</Link>
+            <Link to="/login">Register</Link>
           </div>
         </div>
       </div>

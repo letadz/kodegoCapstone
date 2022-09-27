@@ -52,12 +52,17 @@ a {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
+  width: 60%;
   background-color: var(--color-dgray);
   padding: 4rem 3rem;
   gap: 1rem;
   position: relative;
 }
+
+.cars_container .slider .slick-disabled {
+  opacity: 0;
+}
+
 .profile_container-user {
   width: 100%;
 }

@@ -34,8 +34,11 @@
   gap: 1.5rem;
 }
 
-.blur input[type=date] {
+.blur input[type="date"] {
   width: 100%;
+  border: 1px solid #ced4da;
+  padding: 0.4rem;
+  border-radius: 6px;
 }
 
 @media screen and (max-width: 1024px) {
