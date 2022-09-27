@@ -90,21 +90,25 @@ const LoggedInHeader = () => {
         <div className="navbar-links_container">
           <Menu />
         </div>
+
+        <div className="navbar-book-logout">
+          <div className="navbar-book">
+            <Link to={`/profile/${userName}/home`}>
+              <img src={user?.picture} alt="" />
+              <span>{user?.first_name}</span>
+            </Link>
+          </div>
+          <button
+            onClick={() => {
+              logout();
+            }}
+            className="navbar-logout"
+          >
+            Logout
+          </button>
+        </div>
       </div>
-      <div className="navbar-book">
-        <Link to={`/profile/${userName}/home`}>
-          <img src={user?.picture} alt="" />
-          <span>{user?.first_name}</span>
-        </Link>
-      </div>
-      <button
-        onClick={() => {
-          logout();
-        }}
-        className="navbar-logout"
-      >
-        Logout
-      </button>
+
       <div className="navbar-menu">
         {toggleMenu ? (
           <RiCloseLine
