@@ -55,7 +55,8 @@ const AddCar = ({ setVisible, user }) => {
           </div>
           <span>Add Car</span>
         </div>
-        <form className="addCar_form"
+        <form
+          className="addCar_form"
           onSubmit={() => {
             carSubmit();
           }}
@@ -100,7 +101,7 @@ const AddCar = ({ setVisible, user }) => {
 
           <div className="form-floating">
             <input
-              type="number"
+              type="text"
               className="form-control variant"
               id="car_variant"
               placeholder="Variant"

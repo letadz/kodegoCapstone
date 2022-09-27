@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import EditProfile from "../editProfile";
-import Bio from "../editProfile/Bio";
 import Detail from "../editProfile/Detail";
 import SendVerification from "../sendVerfication";
 
@@ -56,8 +54,10 @@ const ProfileHome = ({ profile }) => {
         {user.verified === false && <SendVerification user={user} />}
       </div>
       <div className="profile_infos">
-        <div className="profile_image">
+        <div className="profile_image details_1">
           <img src={profile.picture} alt="" />
+        </div>
+        <div className="details_2">
           <div className="details_header">Name</div>
           <Detail
             value={details?.first_name}
@@ -88,6 +88,8 @@ const ProfileHome = ({ profile }) => {
             infos={infos}
             rel
           />
+        </div>
+        <div className="details_3">
           <div className="details_header">Birth Day</div>
           <Detail
             value={details?.birth_month}
@@ -116,6 +118,8 @@ const ProfileHome = ({ profile }) => {
             updateDetails={updateDetails}
             infos={infos}
           />
+        </div>
+        <div className="details_4">
           <div className="details_header">Address</div>
           <Detail
             value={details?.address}
