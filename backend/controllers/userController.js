@@ -339,3 +339,28 @@ exports.getAllBooking = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+exports.updateDetails = async (req, res) => {
+  try {
+    const { infos } = req.body;
+    const updated = await User.findByIdAndUpdate(
+      req.user.id,
+      {
+        first_name: infos.first_name,
+        last_name: infos.last_name,
+        gender: infos.gender,
+        birth_year: infos.birth_year,
+        birth_month: infos.birth_month,
+        birth_day: infos.birth_day,
+        address: infos.address,
+        phone_number: infos.phone_number,
+      },
+      {
+        new: true,
+      }
+    );
+    res.json(updated);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

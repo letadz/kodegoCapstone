@@ -58,6 +58,16 @@ const userSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    phone_number: {
+      type: Number,
+
+      trim: true,
+    },
+    address: {
+      type: String,
+
+      trim: true,
+    },
     verified: {
       type: Boolean,
       default: false,

@@ -13,6 +13,7 @@ const {
   getProfile,
   createBook,
   getAllBooking,
+  updateDetails,
 } = require("../controllers/userController");
 const { authUser } = require("../middleware/auth");
 
@@ -31,5 +32,6 @@ router.get("/getAllCars", authUser, getAllCars);
 router.get("/getProfile/:username", authUser, getProfile);
 router.post("/createBook", authUser, createBook);
 router.get("/getAllBooking", authUser, getAllBooking);
+router.put("/updateDetails", authUser, updateDetails);
 
 module.exports = router;

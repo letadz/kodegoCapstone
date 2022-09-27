@@ -1,63 +1,26 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import EditProfile from "../editProfile";
-import Bio from "../editProfile/Bio";
-import Detail from "../editProfile/Detail";
-import SendVerification from "../sendVerfication";
-
-const ProfileHome = ({ profile }) => {
-  const { user } = useSelector((state) => ({ ...state }));
-  const [visible, setVisible] = useState(false);
-  const [details, setDetails] = useState();
-
-  useEffect(() => {
-    setDetails(profile);
-    setInfos(profile);
-  }, [profile]);
-
-  const initial = {
-    first_name: details?.first_name ? details.first_name : "",
-    last_name: details?.last_name ? details.last_name : "",
-    gender: details?.gender ? details.gender : "",
-    birth_year: details?.birth_year ? details.birth_year : "",
-    birth_month: details?.birth_month ? details.birth_month : "",
-    birth_day: details?.birth_day ? details.birth_day : "",
-    address: details?.address ? details.address : "",
-    phone_number: details?.phone_number ? details.phone_number : "",
-  };
-  const [infos, setInfos] = useState(initial);
-  const updateDetails = async (e) => {
-    try {
-      const { data } = await axios.put(
-        `${process.env.REACT_APP_BACKEND_URL}/updateDetails`,
-        {
-          infos,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
-      console.log(data);
-      setDetails(data);
-    } catch (error) {
-      console.log(error.response.data.message);
-    }
-  };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInfos({ ...infos, [name]: value });
-  };
+import { useRef } from "react";
+import Detail from "./Detail";
+import useOnCLickOutside from "../../../helpers/clickOutside";
+import "./style.css";
+export default function EditProfile({
+  details,
+  handleChange,
+  updateDetails,
+  infos,
+  setVisible,
+}) {
+  const modal = useRef(null);
+  useOnCLickOutside(modal, () => setVisible(false));
   return (
-    <div className="profile_container-user">
-      <div className="profile_verification">
-        {user.verified === false && <SendVerification user={user} />}
-      </div>
-      <div className="profile_infos">
-        <div className="profile_image">
-          <img src={profile.picture} alt="" />
+    <div className="blur">
+      <div className="postBox infosBox" ref={modal}>
+        <div className="box_header">
+          <div className="small_circle" onClick={() => setVisible(false)}>
+            <i className="exit_icon">x </i>
+          </div>
+          <span>Edit Details</span>
+        </div>
+        <div className="details_wrapper scrollbar">
           <div className="details_header">Name</div>
           <Detail
             value={details?.first_name}
@@ -140,6 +103,4 @@ const ProfileHome = ({ profile }) => {
       </div>
     </div>
   );
-};
-
-export default ProfileHome;
+}

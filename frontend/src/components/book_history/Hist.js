@@ -2,7 +2,6 @@ import React from "react";
 import moment from "moment";
 
 const Hist = ({ hist }) => {
-  console.log(hist);
   return (
     <tr key={hist._id}>
       <td>{hist.car.car_brand}</td>
