@@ -40,7 +40,7 @@ const Car = ({ car, user }) => {
 
       <div className="btns_container">
         <button
-          className="red_btn"
+          className="orange_btn"
           onClick={() => {
             setVisible(true);
           }}

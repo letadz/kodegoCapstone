@@ -22,6 +22,7 @@ import Cookies from "js-cookie";
 import { profileReducer } from "../../functions/reducers";
 import axios from "axios";
 import { Footer } from "../../components";
+import Copyright from "../../components/copyright/Copyright";
 
 const Profile = () => {
   const { username } = useParams();
@@ -116,6 +117,7 @@ const Profile = () => {
         <div className="profile_navbar-values">{routes}</div>
       </div>
       <Footer />
+      {/* <Copyright /> */}
     </>
   );
 };

@@ -9,7 +9,7 @@ a {
 }
 .user_container {
   padding: 4rem 1rem;
-  background-color: var(--color-orange);
+  background-color: var(--color-grey);
   height: 100%;
 }
 .navigation {
@@ -25,6 +25,7 @@ a {
 .menu_item {
   padding: 1rem;
   border-bottom: 1px solid var(--color-black);
+  color: var(--color-black);
 }
 .navigation_name {
   display: flex;
@@ -117,4 +118,27 @@ a {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+/* HISTORY */
+.history_container {
+  padding: 1rem;
+}
+
+/* .history_container table {
+  border-collapse: separate;
+  border-spacing: 1rem;
+} */
+
+.history_container table {
+  width: 100%;
+}
+
+.history_container table, th, td {
+  border: 1px solid var(--color-black);
+  border-collapse: collapse;
+}
+
+.history_container th, td {
+  padding: 1rem;
 }
