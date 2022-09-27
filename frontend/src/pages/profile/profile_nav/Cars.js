@@ -5,32 +5,35 @@ import Car from "../../../components/cars";
 import { createCar } from "../../../functions/createCar";
 import { carsReducer } from "../../../functions/reducers";
 import AddCar from "../addCar";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 const Cars = ({ profile }) => {
   const { user } = useSelector((state) => ({ ...state }));
   const [visible, setVisible] = useState(false);
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 500,
-    arrows: true,
-  };
+  // const settings = {
+  //   dots: false,
+  //   infinite: false,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   speed: 500,
+  //   arrows: true,
+  // };
 
   return (
     <div className="cars_container">
-      <Slider {...settings} className="slider">
+      {/* <Slider {...settings} className="slider"> */}
+      <div className="profile-cars_container">
         {profile.cars &&
           profile.cars.length &&
           profile.cars.map((car) => (
             <Car key={car._id} car={car} user={user} />
           ))}
-      </Slider>
+      </div>
+
+      {/* </Slider> */}
 
       <button
         className="orange_btn float_right"

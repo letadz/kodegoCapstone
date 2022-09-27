@@ -17,13 +17,15 @@
 
 .orange_btn {
   border: 2px solid var(--color-dgray);
+  /* border: none; */
   outline: none;
   background: var(--color-orange);
   padding: 8.5px 12px;
   border-radius: 7px;
   font-family: inherit;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 1rem;
+  /* width: 100%; */
   color: var(--color-dgray);
   display: flex;
   align-items: center;
@@ -63,12 +65,24 @@
   gap: 6px;
   cursor: pointer;
 }
+/* .dark-outline_btn {
+  padding: 0.5rem 1rem;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  border-radius: 7px;
+  transition: 0.3s ease-in;
+}
+.dark-outline_btn:hover {
+  cursor: pointer;
+  box-shadow: inset 300px 0 0 0 var(--color-orange);
+  border: 1px solid var(--color-orange);
+} */
 .blur {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.768);
+  background: rgba(0, 0, 0, 0.7);
   bottom: 0;
   z-index: 99;
 }

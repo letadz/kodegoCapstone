@@ -90,34 +90,36 @@ const ProfileHome = ({ profile }) => {
           />
         </div>
         <div className="details_3">
-          <div className="details_header">Birth Day</div>
-          <Detail
-            value={details?.birth_month}
-            placeholder="Birth Month"
-            name="birth_month"
-            text="Birth Month"
-            handleChange={handleChange}
-            updateDetails={updateDetails}
-            infos={infos}
-          />
-          <Detail
-            value={details?.birth_day}
-            placeholder="Birth Day"
-            name="birth_day"
-            text="Birth Day"
-            handleChange={handleChange}
-            updateDetails={updateDetails}
-            infos={infos}
-          />
-          <Detail
-            value={details?.birth_year}
-            placeholder="Birth Year"
-            name="birth_year"
-            text="Birth Year"
-            handleChange={handleChange}
-            updateDetails={updateDetails}
-            infos={infos}
-          />
+          <div className="details_header">Birth Date</div>
+          <div className="birthday-container">
+            <Detail
+              value={details?.birth_month}
+              placeholder="Birth Month"
+              name="birth_month"
+              text="Birth Month"
+              handleChange={handleChange}
+              updateDetails={updateDetails}
+              infos={infos}
+            />
+            <Detail
+              value={details?.birth_day}
+              placeholder="Birth Day"
+              name="birth_day"
+              text="Birth Day"
+              handleChange={handleChange}
+              updateDetails={updateDetails}
+              infos={infos}
+            />
+            <Detail
+              value={details?.birth_year}
+              placeholder="Birth Year"
+              name="birth_year"
+              text="Birth Year"
+              handleChange={handleChange}
+              updateDetails={updateDetails}
+              infos={infos}
+            />
+          </div>
         </div>
         <div className="details_4">
           <div className="details_header">Address</div>
