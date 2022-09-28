@@ -7,7 +7,6 @@ import LoggedInHeader from "../../../components/headerUser";
 import { profileReducer } from "../../../functions/reducers";
 
 import { AiOutlineCar, AiOutlineHistory } from "react-icons/ai";
-import { IoSettingsOutline } from "react-icons/io5";
 import { BsArrowLeft } from "react-icons/bs";
 import "../style.css";
 
@@ -85,13 +84,6 @@ const Navbar = () => {
             <Link to={`/profile/${userName}/history`} className="menu_item">
               <AiOutlineHistory className="menu_icon" /> Service History
             </Link>
-<<<<<<< HEAD
-            <Link to={`/profile/${userName}/settings`} className="menu_item">
-              <IoSettingsOutline className="menu_icon" />
-              Settings
-            </Link>
-=======
->>>>>>> 5c0a8779e262f8b964d2cdd0aa6e15caa27460aa
           </div>
         </div>
       </div>

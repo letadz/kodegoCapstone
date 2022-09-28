@@ -169,7 +169,7 @@
 .navbar-book-logout {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 @media screen and (max-width: 1050px) {
   .navbar-links_container {

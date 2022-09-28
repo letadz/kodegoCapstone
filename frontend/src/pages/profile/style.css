@@ -5,10 +5,7 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
-<<<<<<< HEAD
   height: 90vh;
-=======
->>>>>>> 5c0a8779e262f8b964d2cdd0aa6e15caa27460aa
 }
 .user_container {
   padding: 4rem 1rem;
@@ -38,15 +35,17 @@ a {
 
 .menu .menu_icon {
   font-size: 2rem;
-   margin-right: 1.125rem;
+  margin-right: 1.125rem;
 }
 
 .menu_item {
+  display: flex;
+  align-items: center;
   padding: 1rem;
   border-bottom: 1px solid var(--color-dgray);
   color: var(--color-black);
 }
-.menu_item:hover{
+.menu_item:hover {
   color: var(--color-white);
 }
 .navigation_name {
@@ -168,7 +167,6 @@ td {
 td {
   padding: 1rem;
 }
-<<<<<<< HEAD
 
 .copyright2-container {
   background: var(--color-black);
@@ -182,5 +180,3 @@ td {
 .copyright2-container .copyright2-content > span {
   font-size: 0.8rem;
 }
-=======
->>>>>>> 5c0a8779e262f8b964d2cdd0aa6e15caa27460aa
