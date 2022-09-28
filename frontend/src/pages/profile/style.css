@@ -5,12 +5,22 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
 }
 .user_container {
   padding: 4rem 1rem;
-  background-color: var(--color-grey);
+  background-color: var(--color-orange);
   height: 100%;
+}
+.user-link_back {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-black);
+}
+.user-link_back:hover {
+  text-decoration: underline;
+  color: var(--color-black);
 }
 .navigation {
   display: flex;
@@ -22,10 +32,19 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+.menu .menu_icon {
+  font-size: 2rem;
+   margin-right: 1.125rem;
+}
+
 .menu_item {
   padding: 1rem;
-  border-bottom: 1px solid var(--color-black);
+  border-bottom: 1px solid var(--color-dgray);
   color: var(--color-black);
+}
+.menu_item:hover{
+  color: var(--color-white);
 }
 .navigation_name {
   display: flex;
@@ -34,6 +53,7 @@ a {
 .profile_pic img {
   height: 60px;
   border-radius: 50%;
+  margin-right: 0.4rem;
 }
 .profile_text {
   display: flex;
@@ -83,7 +103,7 @@ a {
 .reset {
   background-color: var(--color-grey);
   height: 100vh;
-  color: black;
+  color: var(--color-black);
 }
 .profile_nav {
   background-color: var(--color-white);
@@ -141,4 +161,17 @@ a {
 
 .history_container th, td {
   padding: 1rem;
+}
+
+.copyright2-container {
+  background: var(--color-black);
+}
+
+.copyright2-container .copyright2-content {
+  padding: 0.6rem;
+  color: var(--color-grey);
+}
+
+.copyright2-container .copyright2-content > span {
+  font-size: 0.8rem;
 }

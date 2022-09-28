@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { ServicesHome } from "./components/services/ServicesHome";
@@ -24,7 +24,6 @@ import RustRepair from "./components/services/service/rust-repair/RustRepair";
 import CarRepairServices from "./components/services/service/car-repair-services/CarRepairServices";
 import ExteriorBodyServices from "./components/services/service/exterior-body-services/ExteriorBodyServices";
 import MufflerExhaustServices from "./components/services/service/muffler-exhaust-services/MufflerExhaustServices";
-
 
 const App = () => {
   return (

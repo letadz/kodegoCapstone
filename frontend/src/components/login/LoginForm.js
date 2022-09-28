@@ -64,7 +64,7 @@ export default function LoginForm({ setVisible }) {
             }}
           >
             {(formik) => (
-              <Form>
+              <Form className="login_form">
                 <LoginInput
                   type="text"
                   name="email"
@@ -78,7 +78,7 @@ export default function LoginForm({ setVisible }) {
                   onChange={handleLoginChange}
                   bottom
                 />
-                <button type="submit" className="orange_btn">
+                <button type="submit" className="orange_btn login_btn">
                   Log In
                 </button>
               </Form>
@@ -92,10 +92,10 @@ export default function LoginForm({ setVisible }) {
           {error && <div className="error_text">{error}</div>}
           <div className="sign_splitter"></div>
           <button
-            className="orange_btn open_signup"
+            className="open_signup"
             onClick={() => setVisible(true)}
           >
-            Create Account
+            No account yet? Create one.
           </button>
         </div>
       </div>
