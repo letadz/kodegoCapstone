@@ -9,9 +9,6 @@ const History = ({ profile }) => {
   const columns = useMemo(
     () => [
       {
-        // first group - TV Show
-        Header: "Car",
-        // First group columns
         columns: [
           {
             Header: "Brand",
@@ -24,9 +21,6 @@ const History = ({ profile }) => {
         ],
       },
       {
-        // Second group - Details
-        Header: "Details",
-        // Second group columns
         columns: [
           {
             Header: "Service",
@@ -49,6 +43,7 @@ const History = ({ profile }) => {
       <table>
         <thead>
           <tr>
+            <th>Created</th>
             <th>Brand</th>
             <th>Model</th>
             <th>Service</th>
