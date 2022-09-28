@@ -30,7 +30,6 @@ const Profile = () => {
   const { user } = useSelector((user) => ({ ...user }));
   const userName = username === undefined ? user.username : username;
   const [photos, setPhotos] = useState({});
-
   const [{ loading, error, profile }, dispatch] = useReducer(profileReducer, {
     loading: false,
     profile: {},
@@ -40,9 +39,7 @@ const Profile = () => {
   useEffect(() => {
     getProfile();
   }, [userName]);
-  const path = `${userName}/*`;
-  const max = 30;
-  const sort = "desc";
+
   const getProfile = async () => {
     try {
       dispatch({
@@ -59,20 +56,6 @@ const Profile = () => {
       if (data.ok === false) {
         navigate("/");
       } else {
-        try {
-          const images = await axios.post(
-            `${process.env.REACT_APP_BACKEND_URL}/listImages`,
-            { path, sort, max },
-            {
-              headers: {
-                Authorization: `Bearer ${user.token}`,
-              },
-            }
-          );
-          setPhotos(images.data);
-        } catch (error) {
-          console.log(error);
-        }
         dispatch({
           type: "PROFILE_SUCCESS",
           payload: data,
@@ -88,7 +71,7 @@ const Profile = () => {
   const routes = useRoutes([
     {
       path: "/home",
-      element: <ProfileHome profile={profile} photos={photos.resources} />,
+      element: <ProfileHome profile={profile} />,
     },
     { path: "/cars", element: <Cars profile={profile} /> },
     { path: "/settings", element: <Settings user={user} /> },
@@ -111,7 +94,7 @@ const Profile = () => {
           <img src={Logo} alt="logo" />
         </Link>
 
-        {user ? (
+        {profile ? (
           <div className="right_navbar">
             <Link to={`/profile/${userName}/home`}>
               <img src={profile.picture} alt="" />

@@ -9,6 +9,7 @@ const BookHistory = ({ history }) => {
     <table>
       <thead>
         <tr>
+          <th>Created</th>
           <th>Brand</th>
           <th>Model</th>
           <th>Service</th>

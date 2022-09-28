@@ -6,10 +6,12 @@ import { updateprofilePicture } from "../../../functions/user";
 import Detail from "../editProfile/Detail";
 import SendVerification from "../sendVerfication";
 import FileBase64 from "react-file-base64";
+import PulseLoader from "react-spinners/PulseLoader";
 
-const ProfileHome = ({ profile, photos }) => {
+const ProfileHome = ({ profile }) => {
   const { user } = useSelector((state) => ({ ...state }));
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [details, setDetails] = useState();
   useEffect(() => {
@@ -31,6 +33,7 @@ const ProfileHome = ({ profile, photos }) => {
   const [infos, setInfos] = useState(initial);
   const updateDetails = async (e) => {
     try {
+      setLoading(true);
       // const formData = new FormData();
       // for (let field in infos) {
       //   formData.append(field, infos[field]);
@@ -47,8 +50,9 @@ const ProfileHome = ({ profile, photos }) => {
           },
         }
       );
-
       setDetails(data);
+      setLoading(false);
+      setShow(false);
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -86,6 +90,7 @@ const ProfileHome = ({ profile, photos }) => {
             <>
               <div className="file_container">
                 <FileBase64
+                  value={details?.picture}
                   multiple={false}
                   onDone={({ base64 }) =>
                     setInfos({ ...infos, picture: base64 })
@@ -94,8 +99,12 @@ const ProfileHome = ({ profile, photos }) => {
               </div>
 
               <div className="upload_btns">
-                <button className="orange_btn" onClick={updateDetails}>
-                  Update
+                <button
+                  disabled={loading}
+                  className="orange_btn"
+                  onClick={updateDetails}
+                >
+                  {loading ? <PulseLoader color="#fff" size={5} /> : "Save"}
                 </button>
                 <button className="gray_btn" onClick={() => setShow(false)}>
                   Cancel

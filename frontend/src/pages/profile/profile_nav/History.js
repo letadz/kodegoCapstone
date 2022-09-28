@@ -2,10 +2,19 @@ import axios from "axios";
 import React, { useEffect, useMemo, useReducer, useState } from "react";
 import { useSelector } from "react-redux";
 import Hist from "../../../components/book_history/Hist";
+import { deleteHistory } from "../../../functions/deleteHistory";
 
 const History = ({ profile }) => {
   const { user } = useSelector((state) => ({ ...state }));
+  const [error, setError] = useState();
 
+  const deletehist = async (e) => {
+    const res = await deleteHistory(profile.history, user.id, user.token);
+    if (res === "ok") {
+    } else {
+      setError(res);
+    }
+  };
   const columns = useMemo(
     () => [
       {
@@ -35,6 +44,7 @@ const History = ({ profile }) => {
     ],
     []
   );
+  console.log(profile.history);
   return (
     <div className="history_container">
       <div className="history_header">
@@ -55,7 +65,12 @@ const History = ({ profile }) => {
           {profile.history &&
             profile.history.length &&
             profile.history.map((hist) => (
-              <Hist key={hist._id} columns={columns} hist={hist} user={user} />
+              <Hist
+                key={hist._id}
+                columns={columns}
+                hist={hist}
+                deletehist={deletehist}
+              />
             ))}
         </tbody>
       </table>
