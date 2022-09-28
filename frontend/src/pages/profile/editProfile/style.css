@@ -130,3 +130,13 @@
     width: 96% !important;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .profile_infos {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .details_2 {
+    margin-top: 1.5rem;
+  }
+}

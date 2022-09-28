@@ -2,7 +2,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import "./style.css";
 import Logo from "../../images/logo/MagsLogo.png";
 import Cookies from "js-cookie";
@@ -106,43 +106,43 @@ const LoggedInHeader = () => {
           >
             Logout
           </button>
-        </div>
 
-        <div className="navbar-menu">
-          {toggleMenu ? (
-            <RiCloseLine
-              color="#020202"
-              size={27}
-              onClick={() => setToggleMenu(false)}
-            />
-          ) : (
-            <RiMenu3Line
-              color="#020202"
-              size={27}
-              onClick={() => setToggleMenu(true)}
-            />
-          )}
-          {toggleMenu && (
-            <div className="navbar-menu_container swing-in-top-fwd">
-              <div className="navbar-menu_container-links ">
-                <Menu />
-                <div className="navbar-menu_container-links-book">
-                  <Link to={`/profile/${userName}/home`}>
-                    <img src={profile?.picture} alt="" />
-                    <span>{profile?.first_name}</span>
-                  </Link>
+          <div className="navbar-menu">
+            {toggleMenu ? (
+              <HiOutlineX
+                color="#020202"
+                size={32}
+                onClick={() => setToggleMenu(false)}
+              />
+            ) : (
+              <HiMenuAlt3
+                color="#020202"
+                size={32}
+                onClick={() => setToggleMenu(true)}
+              />
+            )}
+            {toggleMenu && (
+              <div className="navbar-menu_container swing-in-top-fwd">
+                <div className="navbar-menu_container-links ">
+                  <Menu />
+                  <div className="navbar-menu_container-links-book">
+                    <Link to={`/profile/${userName}/home`}>
+                      <img src={profile?.picture} alt="" />
+                      <span>{profile?.first_name}</span>
+                    </Link>
+                  </div>
+                  <button
+                    onClick={() => {
+                      logout();
+                    }}
+                    className="navbar-logout-menu"
+                  >
+                    Logout
+                  </button>
                 </div>
-                <button
-                  onClick={() => {
-                    logout();
-                  }}
-                  className="navbar-logout-menu"
-                >
-                  Logout
-                </button>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>
