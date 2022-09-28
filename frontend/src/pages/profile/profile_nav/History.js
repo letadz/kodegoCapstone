@@ -57,20 +57,11 @@ const History = ({ profile }) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              {profile.history &&
-                profile.history.length &&
-                profile.history.map((hist) => (
-                  <Hist
-                    key={hist._id}
-                    columns={columns}
-                    hist={hist}
-                    user={user}
-                  />
-                ))}
-            </td>
-          </tr>
+          {profile.history &&
+            profile.history.length &&
+            profile.history.map((hist) => (
+              <Hist key={hist._id} columns={columns} hist={hist} user={user} />
+            ))}
         </tbody>
       </table>
     </div>

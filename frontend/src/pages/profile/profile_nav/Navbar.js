@@ -76,9 +76,6 @@ const Navbar = () => {
             <Link to={`/profile/${userName}/history`} className="menu_item">
               Service History
             </Link>
-            <Link to={`/profile/${userName}/settings`} className="menu_item">
-              Settings
-            </Link>
           </div>
         </div>
       </div>
