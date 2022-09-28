@@ -57,10 +57,10 @@ const Navbar = () => {
     <>
       <div className="user_container">
         <div className="navigation">
-            <Link to="/" className="user-link_back">
-              <BsArrowLeft className="arrow-left" />
-              Back to Home
-            </Link>
+          <Link to="/" className="user-link_back">
+            <BsArrowLeft className="arrow-left" />
+            Back to Home
+          </Link>
 
           <Link className="navigation_name" to={`/profile/${userName}/home`}>
             <div className="profile_pic">
@@ -84,6 +84,13 @@ const Navbar = () => {
             <Link to={`/profile/${userName}/history`} className="menu_item">
               <AiOutlineHistory className="menu_icon" /> Service History
             </Link>
+<<<<<<< HEAD
+=======
+            <Link to={`/profile/${userName}/settings`} className="menu_item">
+              <IoSettingsOutline className="menu_icon" />
+              Settings
+            </Link>
+>>>>>>> 2ddeaddc4cd1671a1cafb6701241e4ada8637a6d
           </div>
         </div>
       </div>

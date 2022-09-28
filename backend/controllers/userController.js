@@ -266,6 +266,36 @@ exports.uploadImage = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+exports.listImages = async (req, res) => {
+  const { path, sort, max } = req.body;
+
+  cloudinary.v2.search
+    .expression(`${path}`)
+    .sort_by("created_at", `${sort}`)
+    .max_results(max)
+    .execute()
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err.error.message);
+    });
+};
+exports.uploadImages = async (req, res) => {
+  try {
+    const { path } = req.body;
+    let files = Object.values(req.files).flat();
+    let images = [];
+    for (const file of files) {
+      const url = await uploadToCloudinary(file, path);
+      images.push(url);
+      removeTmp(file.tempFilePath);
+    }
+    res.json(images);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
 
 const uploadToCloudinary = async (file, path) => {
   return new Promise((resolve) => {
@@ -346,6 +376,7 @@ exports.updateDetails = async (req, res) => {
     const updated = await User.findByIdAndUpdate(
       req.user.id,
       {
+        picture: infos.picture,
         first_name: infos.first_name,
         last_name: infos.last_name,
         gender: infos.gender,
@@ -360,6 +391,18 @@ exports.updateDetails = async (req, res) => {
       }
     );
     res.json(updated);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+exports.updateProfilePicture = async (req, res) => {
+  try {
+    const { url } = req.body;
+
+    await User.findByIdAndUpdate(req.user.id, {
+      picture: url,
+    });
+    res.json(url);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

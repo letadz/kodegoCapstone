@@ -5,7 +5,12 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
+<<<<<<< HEAD
   height: 90vh;
+=======
+
+  min-height: 85vh;
+>>>>>>> 2ddeaddc4cd1671a1cafb6701241e4ada8637a6d
 }
 .user_container {
   padding: 4rem 1rem;
@@ -73,24 +78,20 @@ a {
 
 .cars_container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   /* width: 84.4%; */
+  justify-content: center;
   width: 100%;
   position: relative;
-  white-space: nowrap;
   background-color: var(--color-dgray);
-  padding: 4rem 3rem;
-  gap: 1rem;
+  padding: 1rem 6rem 1rem;
 }
 
-.cars_container .profile-cars_container {
-  position: absolute;
+.profile-cars_container {
   display: flex;
   flex-direction: column;
   white-space: normal;
   overflow: auto;
-  height: 60vh;
+  height: 80vh;
   width: 93%;
   scroll-snap-type: y mandatory;
 }
@@ -180,3 +181,34 @@ td {
 .copyright2-container .copyright2-content > span {
   font-size: 0.8rem;
 }
+<<<<<<< HEAD
+=======
+.upload_btns {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0 0 0;
+}
+.file_container {
+  padding: 1rem 0 0 0;
+}
+.file_container input[type="file" i]::-webkit-file-upload-button {
+  background-color: var(--color-dgray);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.upload_btn {
+  color: black !important;
+}
+.profile_circle {
+  padding-top: 1rem;
+}
+.profile_img {
+  display: inline-block;
+  border-radius: 10px;
+}
+.profile_img img {
+  border-radius: 10px;
+}
+>>>>>>> 2ddeaddc4cd1671a1cafb6701241e4ada8637a6d

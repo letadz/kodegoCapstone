@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./style.css";
 import {
   BrowserRouter,
@@ -29,6 +29,8 @@ const Profile = () => {
   const navigate = useNavigate();
   const { user } = useSelector((user) => ({ ...user }));
   const userName = username === undefined ? user.username : username;
+  const [photos, setPhotos] = useState({});
+
   const [{ loading, error, profile }, dispatch] = useReducer(profileReducer, {
     loading: false,
     profile: {},
@@ -38,6 +40,9 @@ const Profile = () => {
   useEffect(() => {
     getProfile();
   }, [userName]);
+  const path = `${userName}/*`;
+  const max = 30;
+  const sort = "desc";
   const getProfile = async () => {
     try {
       dispatch({
@@ -54,6 +59,20 @@ const Profile = () => {
       if (data.ok === false) {
         navigate("/");
       } else {
+        try {
+          const images = await axios.post(
+            `${process.env.REACT_APP_BACKEND_URL}/listImages`,
+            { path, sort, max },
+            {
+              headers: {
+                Authorization: `Bearer ${user.token}`,
+              },
+            }
+          );
+          setPhotos(images.data);
+        } catch (error) {
+          console.log(error);
+        }
         dispatch({
           type: "PROFILE_SUCCESS",
           payload: data,
@@ -67,7 +86,10 @@ const Profile = () => {
     }
   };
   const routes = useRoutes([
-    { path: "/home", element: <ProfileHome profile={profile} /> },
+    {
+      path: "/home",
+      element: <ProfileHome profile={profile} photos={photos.resources} />,
+    },
     { path: "/cars", element: <Cars profile={profile} /> },
     { path: "/settings", element: <Settings user={user} /> },
     { path: "/history", element: <History profile={profile} /> },
@@ -92,7 +114,7 @@ const Profile = () => {
         {user ? (
           <div className="right_navbar">
             <Link to={`/profile/${userName}/home`}>
-              <img src={user.picture} alt="" />
+              <img src={profile.picture} alt="" />
             </Link>
 
             <button
