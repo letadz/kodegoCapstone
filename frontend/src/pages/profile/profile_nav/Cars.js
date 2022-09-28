@@ -32,7 +32,6 @@ const Cars = ({ profile }) => {
             <Car key={car._id} car={car} user={user} />
           ))}
       </div>
-
       {/* </Slider> */}
 
       <button
