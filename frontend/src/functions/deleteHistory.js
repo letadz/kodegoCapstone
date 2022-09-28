@@ -1,11 +1,11 @@
 import axios from "axios";
-export const deleteHist = async (id, user, token) => {
+export const deleteHistory = async (history, user, token) => {
   try {
     const { data } = await axios.delete(
       `${process.env.REACT_APP_BACKEND_URL}/deleteHistory`,
       {
+        history,
         user,
-        id,
       },
       {
         headers: {

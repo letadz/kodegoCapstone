@@ -15,7 +15,7 @@ const Hist = ({ hist }) => {
       <td>{hist.service}</td>
       <td>{moment(new Date(hist.date_book)).format("MM/DD/YYYY")}</td>
       <td>
-        <button>Delete</button>
+        <button className="orange_btn">Delete</button>
       </td>
     </tr>
   );

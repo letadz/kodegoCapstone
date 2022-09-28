@@ -18,6 +18,7 @@ const {
   listImages,
   updateProfilePicture,
   uploadImages,
+  deleteHistory,
 } = require("../controllers/userController");
 const { authUser } = require("../middleware/auth");
 const imageUpload = require("../middleware/imageUpload");
@@ -40,6 +41,7 @@ router.get("/getAllBooking", authUser, getAllBooking);
 router.put("/updateDetails", authUser, updateDetails);
 router.post("/listImages", authUser, listImages);
 router.put("/updateProfilePicture", authUser, updateProfilePicture);
-router.post("/uploadImages", authUser, imageUpload, uploadImages);
 
+router.post("/uploadImages", authUser, imageUpload, uploadImages);
+router.post("/deleteHistory", authUser, deleteHistory);
 module.exports = router;

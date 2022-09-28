@@ -407,3 +407,16 @@ exports.updateProfilePicture = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.deleteHistory = async (req, res) => {
+  try {
+    const { history } = req.body;
+
+    await History.findByIdAndDelete(req.history.id, {
+      id: history._id,
+    });
+    return res.status(200).json({ message: "history deleted" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
