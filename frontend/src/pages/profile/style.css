@@ -6,9 +6,7 @@ a {
   justify-content: space-between;
   width: 100%;
 
-  min-height: 80vh;
-
-  height: 90vh;
+  min-height: 85vh;
 }
 .user_container {
   padding: 4rem 1rem;
