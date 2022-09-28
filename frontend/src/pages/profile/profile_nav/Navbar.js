@@ -84,13 +84,10 @@ const Navbar = () => {
             <Link to={`/profile/${userName}/history`} className="menu_item">
               <AiOutlineHistory className="menu_icon" /> Service History
             </Link>
-<<<<<<< HEAD
-=======
-            <Link to={`/profile/${userName}/settings`} className="menu_item">
+            {/* <Link to={`/profile/${userName}/settings`} className="menu_item">
               <IoSettingsOutline className="menu_icon" />
               Settings
-            </Link>
->>>>>>> 2ddeaddc4cd1671a1cafb6701241e4ada8637a6d
+            </Link> */}
           </div>
         </div>
       </div>

@@ -84,17 +84,16 @@ export default function LoginForm({ setVisible }) {
               </Form>
             )}
           </Formik>
-          <Link to="/reset" className="forgot_password">
-            Forgotten password?
-          </Link>
-          <DotLoader color="#1876f2" loading={loading} size={30} />
 
           {error && <div className="error_text">{error}</div>}
           <div className="sign_splitter"></div>
-          <button
-            className="open_signup"
-            onClick={() => setVisible(true)}
-          >
+          <DotLoader color="#1876f2" loading={loading} size={30} />
+
+          <Link to="/reset" className="forgot_password">
+            Forgotten password?
+          </Link>
+
+          <button className="open_signup" onClick={() => setVisible(true)}>
             No account yet? Create one.
           </button>
         </div>
