@@ -1,4 +1,5 @@
 const express = require("express");
+
 const {
   register,
   activateAccount,
@@ -14,8 +15,12 @@ const {
   createBook,
   getAllBooking,
   updateDetails,
+  listImages,
+  updateProfilePicture,
+  uploadImages,
 } = require("../controllers/userController");
 const { authUser } = require("../middleware/auth");
+const imageUpload = require("../middleware/imageUpload");
 
 const router = express.Router();
 
@@ -33,5 +38,8 @@ router.get("/getProfile/:username", authUser, getProfile);
 router.post("/createBook", authUser, createBook);
 router.get("/getAllBooking", authUser, getAllBooking);
 router.put("/updateDetails", authUser, updateDetails);
+router.post("/listImages", authUser, listImages);
+router.put("/updateProfilePicture", authUser, updateProfilePicture);
+router.post("/uploadImages", authUser, imageUpload, uploadImages);
 
 module.exports = router;

@@ -94,8 +94,8 @@ const LoggedInHeader = () => {
         <div className="navbar-book-logout">
           <div className="navbar-book">
             <Link to={`/profile/${userName}/home`}>
-              <img src={user?.picture} alt="" />
-              <span>{user?.first_name}</span>
+              <img src={profile?.picture} alt="" />
+              <span>{profile?.first_name}</span>
             </Link>
           </div>
           <button
@@ -128,8 +128,8 @@ const LoggedInHeader = () => {
                 <Menu />
                 <div className="navbar-menu_container-links-book">
                   <Link to={`/profile/${userName}/home`}>
-                    <img src={user?.picture} alt="" />
-                    <span>{user?.first_name}</span>
+                    <img src={profile?.picture} alt="" />
+                    <span>{profile?.first_name}</span>
                   </Link>
                 </div>
                 <button

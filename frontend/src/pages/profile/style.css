@@ -175,3 +175,31 @@ td {
 .copyright2-container .copyright2-content > span {
   font-size: 0.8rem;
 }
+.upload_btns {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0 0 0;
+}
+.file_container {
+  padding: 1rem 0 0 0;
+}
+.file_container input[type="file" i]::-webkit-file-upload-button {
+  background-color: var(--color-dgray);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.upload_btn {
+  color: black !important;
+}
+.profile_circle {
+  padding-top: 1rem;
+}
+.profile_img {
+  display: inline-block;
+  border-radius: 10px;
+}
+.profile_img img {
+  border-radius: 10px;
+}

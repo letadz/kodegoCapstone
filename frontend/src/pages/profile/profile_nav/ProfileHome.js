@@ -1,20 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { uploadImages } from "../../../functions/uploadImages";
+import { updateprofilePicture } from "../../../functions/user";
 import Detail from "../editProfile/Detail";
 import SendVerification from "../sendVerfication";
+import FileBase64 from "react-file-base64";
 
-const ProfileHome = ({ profile }) => {
+const ProfileHome = ({ profile, photos }) => {
   const { user } = useSelector((state) => ({ ...state }));
-  const [visible, setVisible] = useState(false);
-  const [details, setDetails] = useState();
+  const [show, setShow] = useState(false);
 
+  const [details, setDetails] = useState();
   useEffect(() => {
     setDetails(profile);
     setInfos(profile);
   }, [profile]);
 
   const initial = {
+    picture: details?.picture ? details.picture : "",
     first_name: details?.first_name ? details.first_name : "",
     last_name: details?.last_name ? details.last_name : "",
     gender: details?.gender ? details.gender : "",
@@ -27,6 +31,11 @@ const ProfileHome = ({ profile }) => {
   const [infos, setInfos] = useState(initial);
   const updateDetails = async (e) => {
     try {
+      // const formData = new FormData();
+      // for (let field in infos) {
+      //   formData.append(field, infos[field]);
+      // }
+      // console.log(infos);
       const { data } = await axios.put(
         `${process.env.REACT_APP_BACKEND_URL}/updateDetails`,
         {
@@ -38,16 +47,24 @@ const ProfileHome = ({ profile }) => {
           },
         }
       );
-      console.log(data);
+
       setDetails(data);
     } catch (error) {
       console.log(error.response.data.message);
     }
   };
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInfos({ ...infos, [name]: value });
+    let value = e.target.value;
+
+    if (e.target.name === "image") {
+      value = e.target.files[0];
+    }
+    setInfos({
+      ...infos,
+      [e.target.name]: value,
+    });
   };
+
   return (
     <div className="profile_container-user">
       <div className="profile_verification">
@@ -55,8 +72,39 @@ const ProfileHome = ({ profile }) => {
       </div>
       <div className="profile_infos">
         <div className="profile_image details_1">
-          <img src={profile.picture} alt="" />
+          <div className="profile_img">
+            <img src={profile.picture} alt="" />
+          </div>
+          <div className="profile_circle hover1" onClick={() => setShow(true)}>
+            {!show && (
+              <button className="orange_btn upload_btn">
+                <i className="camera_filled_icon camera"></i>Update Image
+              </button>
+            )}
+          </div>
+          {show && (
+            <>
+              <div className="file_container">
+                <FileBase64
+                  multiple={false}
+                  onDone={({ base64 }) =>
+                    setInfos({ ...infos, picture: base64 })
+                  }
+                />
+              </div>
+
+              <div className="upload_btns">
+                <button className="orange_btn" onClick={updateDetails}>
+                  Update
+                </button>
+                <button className="gray_btn" onClick={() => setShow(false)}>
+                  Cancel
+                </button>
+              </div>
+            </>
+          )}
         </div>
+
         <div className="details_2">
           <div className="details_header">Name</div>
           <Detail
