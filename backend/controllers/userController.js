@@ -314,7 +314,7 @@ exports.getProfile = async (req, res) => {
     const cars = await Car.find({ user: profile._id }).populate("user");
     const history = await History.find({
       user: profile._id,
-    }).populate("user");
+    }).populate("car");
     res.json({ ...profile.toObject(), cars, history });
   } catch (error) {
     res.status(500).json({ message: error.message });

@@ -19,11 +19,11 @@ export default function Detail({
         {value ? (
           <div className="info_profile ">
             {value}
-            <i className="edit_icon">edit</i>
+            <i className="edit_icon"></i>
           </div>
         ) : (
           <>
-            <i className="rounded_plus_icon">+</i>
+            <i className="rounded_plus_icon"></i>
             <span className="underline">Add {text}</span>
           </>
         )}
