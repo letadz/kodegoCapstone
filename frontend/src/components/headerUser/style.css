@@ -157,6 +157,13 @@
   color: var(--color-black);
   padding: 0.4rem 1rem;
   border-radius: 5px;
+  transition: 0.3s ease-in;
+  background-color: var(--color-white);
+}
+
+.navbar-logout:hover {
+  box-shadow: inset 200px 0 0 0 var(--color-orange);
+  border: 2px solid var(--color-orange);
 }
 
 .navbar-book-logout {

@@ -5,6 +5,10 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import LoggedInHeader from "../../../components/headerUser";
 import { profileReducer } from "../../../functions/reducers";
+
+import { AiOutlineCar, AiOutlineHistory } from "react-icons/ai";
+import { IoSettingsOutline } from "react-icons/io5";
+import { BsArrowLeft } from "react-icons/bs";
 import "../style.css";
 
 const Navbar = () => {
@@ -54,7 +58,10 @@ const Navbar = () => {
     <>
       <div className="user_container">
         <div className="navigation">
-          <Link to="/">Back to Home</Link>
+          <Link to="/" className="user-link_back">
+            <BsArrowLeft className="arrow-left" />
+            Back to Home
+          </Link>
 
           <Link className="navigation_name" to={`/profile/${userName}/home`}>
             <div className="profile_pic">
@@ -71,10 +78,16 @@ const Navbar = () => {
 
           <div className="menu">
             <Link to={`/profile/${userName}/cars`} className="menu_item">
+              <AiOutlineCar className="menu_icon" />
               Cars
             </Link>
+
             <Link to={`/profile/${userName}/history`} className="menu_item">
-              Service History
+              <AiOutlineHistory className="menu_icon" /> Service History
+            </Link>
+            <Link to={`/profile/${userName}/settings`} className="menu_item">
+              <IoSettingsOutline className="menu_icon" />
+              Settings
             </Link>
           </div>
         </div>

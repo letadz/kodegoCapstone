@@ -68,40 +68,40 @@ const Header = () => {
           <div className="navbar-register">
             <Link to="/login">Register</Link>
           </div>
-        </div>
-      </div>
 
-      <div className="navbar-menu">
-        {toggleMenu ? (
-          <HiOutlineX
-            color="#020202"
-            size={32}
-            onClick={() => setToggleMenu(false)}
-          />
-        ) : (
-          <HiMenuAlt3
-            color="#020202"
-            size={32}
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
-        {toggleMenu && (
-          <div className="navbar-menu_container swing-in-top-fwd">
-            <div className="navbar-menu_container-links ">
-              <Menu />
-              <div className="navbar-menu_container-links-login">
-                <p>
-                  <Link to="/login">Login</Link>
-                </p>
+          <div className="navbar-menu">
+            {toggleMenu ? (
+              <HiOutlineX
+                color="#020202"
+                size={32}
+                onClick={() => setToggleMenu(false)}
+              />
+            ) : (
+              <HiMenuAlt3
+                color="#020202"
+                size={32}
+                onClick={() => setToggleMenu(true)}
+              />
+            )}
+            {toggleMenu && (
+              <div className="navbar-menu_container swing-in-top-fwd">
+                <div className="navbar-menu_container-links ">
+                  <Menu />
+                  <div className="navbar-menu_container-links-login">
+                    <p>
+                      <Link to="/login">Login</Link>
+                    </p>
+                  </div>
+                  <div className="navbar-menu_container-links-login">
+                    <p>
+                      <Link to="/login">Register</Link>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="navbar-menu_container-links-login">
-                <p>
-                  <Link to="/login">Register</Link>
-                </p>
-              </div>
-            </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

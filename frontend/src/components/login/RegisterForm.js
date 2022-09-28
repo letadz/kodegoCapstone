@@ -174,7 +174,7 @@ export default function RegisterForm({ setVisible }) {
               <div className="reg_line">
                 <RegisterInput
                   type="password"
-                  placeholder="New password"
+                  placeholder="Password"
                   name="password"
                   onChange={handleRegisterChange}
                 />

@@ -107,43 +107,43 @@ const LoggedInHeader = () => {
             Logout
           </button>
         </div>
-      </div>
 
-      <div className="navbar-menu">
-        {toggleMenu ? (
-          <RiCloseLine
-            color="#020202"
-            size={27}
-            onClick={() => setToggleMenu(false)}
-          />
-        ) : (
-          <RiMenu3Line
-            color="#020202"
-            size={27}
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
-        {toggleMenu && (
-          <div className="navbar-menu_container swing-in-top-fwd">
-            <div className="navbar-menu_container-links ">
-              <Menu />
-              <div className="navbar-menu_container-links-book">
-                <Link to={`/profile/${userName}/home`}>
-                  <img src={user?.picture} alt="" />
-                  <span>{user?.first_name}</span>
-                </Link>
+        <div className="navbar-menu">
+          {toggleMenu ? (
+            <RiCloseLine
+              color="#020202"
+              size={27}
+              onClick={() => setToggleMenu(false)}
+            />
+          ) : (
+            <RiMenu3Line
+              color="#020202"
+              size={27}
+              onClick={() => setToggleMenu(true)}
+            />
+          )}
+          {toggleMenu && (
+            <div className="navbar-menu_container swing-in-top-fwd">
+              <div className="navbar-menu_container-links ">
+                <Menu />
+                <div className="navbar-menu_container-links-book">
+                  <Link to={`/profile/${userName}/home`}>
+                    <img src={user?.picture} alt="" />
+                    <span>{user?.first_name}</span>
+                  </Link>
+                </div>
+                <button
+                  onClick={() => {
+                    logout();
+                  }}
+                  className="navbar-logout-menu"
+                >
+                  Logout
+                </button>
               </div>
-              <button
-                onClick={() => {
-                  logout();
-                }}
-                className="navbar-logout-menu"
-              >
-                Logout
-              </button>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
