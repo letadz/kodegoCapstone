@@ -6,7 +6,7 @@ import Contact from "../../../contact/Contact";
 import Copyright from "../../../copyright/Copyright";
 import "./GlassRepair.css";
 
-const GlassRepair = () => {
+const GlassRepair = ({ user, userName }) => {
   return (
     <div className="glass-repair">
       <div className="glass-repair-container container">
@@ -51,7 +51,7 @@ const GlassRepair = () => {
                 <li>Spoil the general appearance of the car</li>
                 <li>Over time will lead to complete destruction of glass</li>
                 <li>Make it easier for thieves to get into the car</li>
-              </ul> 
+              </ul>
 
               <p>
                 Mag's Auto Repair’s specialists repair the windshield and side
@@ -76,9 +76,44 @@ const GlassRepair = () => {
               >
                 <div className="glass-repair-img"></div>
               </div>
+              {user && (
+                <button
+                  className="btn-schedule"
+                  // type="button"
+                  // className="btn-schedule"
+                  // data-bs-toggle="modal"
+                  // data-bs-target="#schedule"
+                  // data-aos="fade-up"
+                  // data-aos-anchor-placement="bottom-bottom"
+                  // data-aos-delay="1000"
+                  // data-aos-easing="ease-in"
+                >
+                  {/* <span>Book Schedule</span> */}
 
+                  <Link to={`/profile/${userName}/cars`}>Book Schedule</Link>
+                </button>
+              )}
+              {!user && (
+                <button
+                  className="btn-schedule"
+                  // type="button"
+                  // className="btn-schedule"
+                  // data-bs-toggle="modal"
+                  // data-bs-target="#schedule"
+                  // data-aos="fade-up"
+                  // data-aos-anchor-placement="bottom-bottom"
+                  // data-aos-delay="1000"
+                  // data-aos-easing="ease-in"
+                >
+                  {/* <span>Book Schedule</span> */}
+
+                  <Link to={`/login`}>
+                    <span>Book Schedule</span>
+                  </Link>
+                </button>
+              )}
               {/* Book Schedule Button */}
-              <button
+              {/* <button
                 type="button"
                 className="btn-schedule"
                 data-bs-toggle="modal"
@@ -89,9 +124,9 @@ const GlassRepair = () => {
                 data-aos-easing="ease-in"
               >
                 <span>Book Schedule</span>
-              </button>
+              </button> */}
               {/* Modal Form */}
-              <ModalSchedule />
+              {/* <ModalSchedule /> */}
             </div>
           </div>
         </div>

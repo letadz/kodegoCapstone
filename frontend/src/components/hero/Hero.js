@@ -2,7 +2,7 @@ import React from "react";
 import Cta from "../subComponents/cta/Cta";
 import "./Hero.css";
 
-const Hero = () => {
+const Hero = ({ user, userName }) => {
   return (
     <div className="hero-section">
       <div className="hero-bg">
@@ -24,7 +24,7 @@ const Hero = () => {
             data-aos-delay="1200"
             data-aos-easing="ease-in"
           >
-            <Cta />
+            <Cta user={user} useName={userName} />
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ router.get("/getAllBooking", authUser, getAllBooking);
 router.put("/updateDetails", authUser, updateDetails);
 router.post("/listImages", authUser, listImages);
 router.put("/updateProfilePicture", authUser, updateProfilePicture);
+router.delete("/deleteHistory/:id", authUser, deleteHistory);
 
 router.post("/uploadImages", authUser, imageUpload, uploadImages);
-router.post("/deleteHistory", authUser, deleteHistory);
 module.exports = router;

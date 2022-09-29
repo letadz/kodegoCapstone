@@ -361,10 +361,10 @@ exports.createBook = async (req, res) => {
 
 exports.getAllBooking = async (req, res) => {
   try {
-    const bookings = await History.find()
+    const history = await History.find()
       .populate("car")
       .sort({ createdAt: -1 });
-    res.json(bookings);
+    res.json(history);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -410,13 +410,9 @@ exports.updateProfilePicture = async (req, res) => {
 
 exports.deleteHistory = async (req, res) => {
   try {
-    const { history } = req.body;
-
-    await History.findByIdAndDelete(req.history.id, {
-      id: history._id,
-    });
-    return res.status(200).json({ message: "history deleted" });
+    await History.findByIdAndRemove(req.params.id);
+    res.json({ status: "ok" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };

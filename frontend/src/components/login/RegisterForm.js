@@ -104,9 +104,7 @@ export default function RegisterForm({ setVisible }) {
     <div className="blur">
       <div className="register">
         <div className="register_header">
-          <i className="exit_icon" onClick={() => setVisible(false)}>
-            x
-          </i>
+          <i className="exit_icon" onClick={() => setVisible(false)}></i>
           <span>Create Account</span>
         </div>
         <Formik

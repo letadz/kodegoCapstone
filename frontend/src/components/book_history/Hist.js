@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import Moment from "react-moment";
+import DeleteConfirmation from "./DeleteConfirmation";
+import { deleteHistory } from "../../functions/deleteHistory";
+import { useNavigate } from "react-router-dom";
 
-const Hist = ({ hist }) => {
+const Hist = ({ userName, hist, setDelHistory, historyId, token, postRef }) => {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  const deleteConfirmation = () => {
+    setDelHistory(hist._id);
+    setShow(true);
+  };
+  const deleteHist = async () => {
+    const res = await deleteHistory(historyId, token);
+    if (res.status === "ok") {
+      setShow(false);
+      postRef.current.remove();
+    }
+  };
   return (
-    <tr key={hist._id}>
+    <tr ref={postRef} key={hist._id}>
       <td>
         <Moment fromNow interval={30}>
           {hist.createdAt}
@@ -15,7 +31,12 @@ const Hist = ({ hist }) => {
       <td>{hist.service}</td>
       <td>{moment(new Date(hist.date_book)).format("MM/DD/YYYY")}</td>
       <td>
-        <button className="orange_btn">Delete</button>
+        <button onClick={() => deleteConfirmation()} className="orange_btn">
+          Delete
+        </button>
+        {show && (
+          <DeleteConfirmation setShow={setShow} deleteHist={deleteHist} />
+        )}
       </td>
     </tr>
   );

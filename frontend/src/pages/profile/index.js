@@ -75,7 +75,10 @@ const Profile = () => {
     },
     { path: "/cars", element: <Cars profile={profile} /> },
     { path: "/settings", element: <Settings user={user} /> },
-    { path: "/history", element: <History profile={profile} /> },
+    {
+      path: "/history",
+      element: <History userName={userName} profile={profile} />,
+    },
   ]);
 
   const dispatchs = useDispatch();

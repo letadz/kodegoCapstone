@@ -20,11 +20,6 @@ export default function ProfilePicture({
           </div>
           <span>Update profile picture</span>
         </div>
-        <FileBase64
-          multiple={false}
-          onDone={({ base64 }) => setInfos({ ...infos, picture: base64 })}
-        />
-        <button onClick={updateDetails}>Update</button>
       </div>
     </div>
   );

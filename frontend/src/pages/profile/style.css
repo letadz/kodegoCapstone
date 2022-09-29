@@ -5,12 +5,8 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
-<<<<<<< HEAD
-  height: 90vh;
-=======
 
   min-height: 85vh;
->>>>>>> 2ddeaddc4cd1671a1cafb6701241e4ada8637a6d
 }
 .user_container {
   padding: 4rem 1rem;
@@ -182,8 +178,6 @@ td {
 .copyright2-container .copyright2-content > span {
   font-size: 0.8rem;
 }
-<<<<<<< HEAD
-=======
 .upload_btns {
   display: flex;
   gap: 1rem;
@@ -212,4 +206,3 @@ td {
 .profile_img img {
   border-radius: 10px;
 }
->>>>>>> 2ddeaddc4cd1671a1cafb6701241e4ada8637a6d

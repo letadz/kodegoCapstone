@@ -6,7 +6,7 @@ import Contact from "../../../contact/Contact";
 import Copyright from "../../../copyright/Copyright";
 import "./ExteriorBodyServices.css";
 
-const ExteriorBodyServices = () => {
+const ExteriorBodyServices = ({ user, userName }) => {
   return (
     <div className="exterior-body">
       <div className="exterior-body-container container">
@@ -77,9 +77,44 @@ const ExteriorBodyServices = () => {
               >
                 <div className="exterior-body-img"></div>
               </div>
+              {user && (
+                <button
+                  className="btn-schedule"
+                  // type="button"
+                  // className="btn-schedule"
+                  // data-bs-toggle="modal"
+                  // data-bs-target="#schedule"
+                  // data-aos="fade-up"
+                  // data-aos-anchor-placement="bottom-bottom"
+                  // data-aos-delay="1000"
+                  // data-aos-easing="ease-in"
+                >
+                  {/* <span>Book Schedule</span> */}
 
+                  <Link to={`/profile/${userName}/cars`}>Book Schedule</Link>
+                </button>
+              )}
+              {!user && (
+                <button
+                  className="btn-schedule"
+                  // type="button"
+                  // className="btn-schedule"
+                  // data-bs-toggle="modal"
+                  // data-bs-target="#schedule"
+                  // data-aos="fade-up"
+                  // data-aos-anchor-placement="bottom-bottom"
+                  // data-aos-delay="1000"
+                  // data-aos-easing="ease-in"
+                >
+                  {/* <span>Book Schedule</span> */}
+
+                  <Link to={`/login`}>
+                    <span>Book Schedule</span>
+                  </Link>
+                </button>
+              )}
               {/* Book Schedule Button */}
-              <button
+              {/* <button
                 type="button"
                 className="btn-schedule"
                 data-bs-toggle="modal"
@@ -90,9 +125,9 @@ const ExteriorBodyServices = () => {
                 data-aos-easing="ease-in"
               >
                 <span>Book Schedule</span>
-              </button>
+              </button> */}
               {/* Modal Form */}
-              <ModalSchedule />
+              {/* <ModalSchedule /> */}
             </div>
           </div>
         </div>

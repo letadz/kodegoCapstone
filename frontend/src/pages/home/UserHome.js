@@ -17,12 +17,15 @@ import {
 import LoggedInHeader from "../../components/headerUser";
 
 const UserHome = () => {
+  const { username } = useParams();
+  const { user } = useSelector((user) => ({ ...user }));
+  const userName = username === undefined ? user.username : username;
   return (
     <div>
       <LoggedInHeader />
-      <Hero />
+      <Hero user={user} useName={userName} />
       <Offers />
-      <Services />
+      <Services userName={userName} user={user} />
       <Company />
       <Faqs />
       <Testimonials />

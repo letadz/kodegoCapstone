@@ -98,3 +98,6 @@
   background: var(--bg-third);
   cursor: pointer;
 }
+.btn-schedule a {
+  color: var(--color-dgray);
+}

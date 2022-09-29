@@ -1,20 +1,67 @@
 import axios from "axios";
-import React, { useEffect, useMemo, useReducer, useState } from "react";
+import React, { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import Hist from "../../../components/book_history/Hist";
 import { deleteHistory } from "../../../functions/deleteHistory";
 
-const History = ({ profile }) => {
-  const { user } = useSelector((state) => ({ ...state }));
-  const [error, setError] = useState();
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "HISTORY_REQUEST":
+//       return { ...state, loading: true, error: "" };
+//     case "HISTORY_SUCCESS":
+//       return {
+//         ...state,
+//         loading: false,
+//         histories: action.payload,
+//         error: "",
+//       };
+//     case "HISTORY_ERROR":
+//       return { ...state, loading: false, error: action.payload };
 
-  const deletehist = async (e) => {
-    const res = await deleteHistory(profile.history, user.id, user.token);
-    if (res === "ok") {
-    } else {
-      setError(res);
-    }
-  };
+//     default:
+//       return state;
+//   }
+
+const History = ({ userName, profile }) => {
+  const [delHistory, setDelHistory] = useState();
+  const [userHistory, setUserHistory] = useState();
+  const [visible, setVisible] = useState(false);
+  const { user } = useSelector((state) => ({ ...state }));
+  const postRef = useRef(null);
+
+  // const [{ loading, error, histories }, dispatch] = useReducer(reducer, {
+  //   loading: false,
+  //   histories: [],
+  //   error: "",
+  // });
+  // useEffect(() => {
+  //   getAllHistories();
+  // }, []);
+  // const getAllHistories = async () => {
+  //   try {
+  //     dispatch({
+  //       type: "HISTORY_REQUEST",
+  //     });
+  //     const { data } = await axios.get(
+  //       `${process.env.REACT_APP_BACKEND_URL}/getAllBooking`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${user.token}`,
+  //         },
+  //       }
+  //     );
+  //     dispatch({
+  //       type: "HISTORY_SUCCESS",
+  //       payload: data,
+  //     });
+  //   } catch (error) {
+  //     dispatch({
+  //       type: "HISTORY_ERROR",
+  //       payload: error.response.data.message,
+  //     });
+  //   }
+  // };
+
   const columns = useMemo(
     () => [
       {
@@ -44,7 +91,7 @@ const History = ({ profile }) => {
     ],
     []
   );
-  console.log(profile.history);
+  // console.log(histories._id);
   return (
     <div className="history_container">
       <div className="history_header">
@@ -53,7 +100,7 @@ const History = ({ profile }) => {
       <table>
         <thead>
           <tr>
-            <th></th>
+            <th>Created</th>
             <th>Brand</th>
             <th>Model</th>
             <th>Service</th>
@@ -66,10 +113,15 @@ const History = ({ profile }) => {
             profile.history.length &&
             profile.history.map((hist) => (
               <Hist
+                user={user}
                 key={hist._id}
                 columns={columns}
                 hist={hist}
-                deletehist={deletehist}
+                historyId={hist._id}
+                setDelHistory={setDelHistory}
+                token={user.token}
+                postRef={postRef}
+                userName={userName}
               />
             ))}
         </tbody>
