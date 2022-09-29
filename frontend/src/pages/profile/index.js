@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer, useState } from "react";
+import { HiMenuAlt3, HiOutlineX } from "react-icons/hi";
 import "./style.css";
 import {
   BrowserRouter,
@@ -21,8 +22,6 @@ import Logo from "../../images/logo/MagsLogo.png";
 import Cookies from "js-cookie";
 import { profileReducer } from "../../functions/reducers";
 import axios from "axios";
-import { Footer } from "../../components";
-import Copyright from "../../components/copyright/Copyright";
 
 const Profile = () => {
   const { username } = useParams();
@@ -81,6 +80,7 @@ const Profile = () => {
     },
   ]);
 
+  const [toggleMenu, setToggleMenu] = useState(false);
   const dispatchs = useDispatch();
   const navigates = useNavigate();
   const logout = () => {
@@ -97,35 +97,75 @@ const Profile = () => {
           <img src={Logo} alt="logo" />
         </Link>
 
-        {profile ? (
-          <div className="right_navbar">
-            <Link to={`/profile/${userName}/home`}>
-              <img src={profile.picture} alt="" />
-            </Link>
+        <div className="hamburger_menu">
+          {profile ? (
+            <div className="right_navbar">
+              <Link to={`/profile/${userName}/home`}>
+                <img src={profile.picture} alt="" />
+              </Link>
 
-            <button
-              onClick={() => {
-                logout();
-              }}
-              className="orange_btn"
-            >
-              Logout
-            </button>
+              <button
+                onClick={() => {
+                  logout();
+                }}
+                className="orange_btn logout"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="right_reset">
+              <button className="orange_btn">Login</button>
+            </Link>
+          )}
+
+          {/* MOBILE MENU */}
+          <div className="navbar-menu">
+            {toggleMenu ? (
+              <HiOutlineX
+                color="#020202"
+                size={32}
+                onClick={() => setToggleMenu(false)}
+              />
+            ) : (
+              <HiMenuAlt3
+                color="#020202"
+                size={32}
+                onClick={() => setToggleMenu(true)}
+              />
+            )}
+            {toggleMenu && (
+              <div className="navbar-menu_container">
+                <div className="navbar-menu_container-links">
+                  <div className="navbar-menu_container-links-book">
+                    {/* <Link to={`/profile/${userName}/home`}>
+                    <img src={profile?.picture} alt="" />
+                    <span>{profile?.first_name}</span>
+                  </Link> */}
+                    <Navbar />
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      logout();
+                    }}
+                    className="orange_btn logout-menu"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
-        ) : (
-          <Link to="/login" className="right_reset">
-            <button className="orange_btn">Login</button>
-          </Link>
-        )}
+        </div>
       </div>
+
       <div className="profile_container">
         <div className="profile_navbar">
           <Navbar username={userName} />
         </div>
         <div className="profile_navbar-values">{routes}</div>
       </div>
-      {/* <Footer /> */}
-      {/* <Copyright /> */}
       <div className="copyright2-container">
         <div className="copyright2-content">
           <span>&copy; Mag's Auto Repair Philippines. All Right Reserved</span>

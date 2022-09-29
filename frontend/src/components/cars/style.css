@@ -38,3 +38,9 @@
   width: 100%;
   max-width: 450px;
 }
+
+@media screen and (max-width: 425px) {
+  .car_container {
+    padding: 1.2rem;
+  }
+}
