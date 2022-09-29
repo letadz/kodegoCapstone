@@ -1,5 +1,6 @@
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
 import * as Yup from "yup";
 import LoginInput from "../../components/inputs/loginInput";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../images/other-logo/modal-logo-white.png";
 const loginInfos = {
   email: "",
   password: "",
@@ -50,8 +52,18 @@ export default function LoginForm({ setVisible }) {
   };
   return (
     <div className="login_wrap">
+      <div className="login-back_home">
+        <Link to="/" className="login-link-home">
+          <BsArrowLeft className="arrow-left" />
+          <span className="services-text-left"> Back to Home</span>
+        </Link>
+      </div>
       <div className="login_2">
         <div className="login_2_wrap">
+          <div className="login-header">
+            <img className="login-header_logo" src={Logo} alt="logo" />
+            <span>Login</span>
+          </div>
           <Formik
             enableReinitialize
             initialValues={{
