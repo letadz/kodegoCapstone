@@ -9,6 +9,7 @@ import SendEmail from "./SendEmail";
 import CodeVerification from "./CodeVerification";
 import { Footer } from "../../components";
 import ChangePassword from "./ChangePassword";
+import Copyright from "../../components/copyright/Copyright";
 
 const ResetPassword = () => {
   const { user } = useSelector((state) => ({ ...state }));
@@ -107,7 +108,12 @@ const ResetPassword = () => {
           )}
         </div>
       </div>
-      <Footer />
+
+      <div className="copyright-container">
+        <div className="copyright-content">
+          <span>&copy; Mag's Auto Repair Philippines. All Right Reserved</span>
+        </div>
+      </div>
     </div>
   );
 };

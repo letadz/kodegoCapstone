@@ -50,7 +50,7 @@ const SearchAccount = ({
           <Link to="/login" className="">
             Cancel
           </Link>
-          <button type="submit" className="gray_btn">
+          <button type="submit" className="orange_btn">
             Search
           </button>
         </div>
