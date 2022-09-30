@@ -2,7 +2,11 @@
   "name": "mags_auto_repair_mern",
   "version": "1.0.0",
   "description":"Kodego Capstone Project",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "client-install":"npm install --prefix client",
     "start":"node server.js",
