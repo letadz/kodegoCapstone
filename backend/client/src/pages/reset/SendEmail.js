@@ -56,7 +56,7 @@ const SendEmail = ({
           onClick={() => {
             sendEmail();
           }}
-          className="gray_btn"
+          className="orange_btn"
         >
           Continue
         </button>

@@ -125,6 +125,7 @@
 
 .navbar-login:hover {
   color: var(--color-black);
+  box-shadow: inset 200px 0 0 0 var(--color-orange);
   background-color: var(--color-orange);
   border: 1px solid var(--color-orange);
 }
@@ -137,15 +138,6 @@
 .navbar-register a {
   color: var(--color-black);
   text-decoration: none;
-}
-
-.navbar-login:hover {
-  cursor: pointer;
-  box-shadow: inset 200px 0 0 0 var(--color-orange);
-}
-
-.navbar-login:hover a {
-  color: var(--color-black);
 }
 
 .navbar-register {
@@ -188,14 +180,14 @@
     display: block;
   }
 
-  .navbar-login, .navbar-register {
+  .navbar-login,
+  .navbar-register {
     display: none;
   }
 
   .navbar-menu_container-links-login {
     display: block;
   }
-
 
   .navbar-menu_container-links-login p a {
     font-weight: 700 !important;

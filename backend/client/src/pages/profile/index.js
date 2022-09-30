@@ -163,6 +163,7 @@ const Profile = () => {
         </div>
         <div className="profile_navbar-values">{routes}</div>
       </div>
+      
       <div className="copyright2-container">
         <div className="copyright2-content">
           <span>&copy; Mag's Auto Repair Philippines. All Right Reserved</span>
